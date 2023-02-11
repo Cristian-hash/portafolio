@@ -17,3 +17,25 @@ body.dark{
     --text-color:hsl(0, 0%, 83%);
     --bg-color:hsl(0, 0%, 15%);
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:75 px;
+    padding: 0 1.5em;
+    background-color: royalblue;
+}
+
+.switches{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-theme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
