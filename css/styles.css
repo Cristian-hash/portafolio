@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75 px;
+    height: 75px;
     padding: 0 1.5em;
     background-color: var(--bg-card-color);
     }

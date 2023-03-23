@@ -6,7 +6,7 @@ const toogleColors = document.getElementById("toggle-colors");
 
 const rootStyles = document.documentElement.style;
 
-toggleTheme.addEventListener("click",() => {
+toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     if(toggleIcon.src.includes("moon.svg")) {
         toggleIcon.src="assets/icons/sun.svg";
@@ -18,5 +18,5 @@ toggleTheme.addEventListener("click",() => {
 });
 
 toggleColors.addEventListener('click',(e)=>{
-    rootStyles.setProperty('--primary-color',e.target.dataset.color);
+    rootStyles.setProperty('--primary-color', e.target.dataset.color);
 });
