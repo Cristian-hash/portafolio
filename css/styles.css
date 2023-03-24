@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75 px;
+    height: 75px;
     padding: 0 1.5em;
     background-color: var(--bg-card-color);
     }
@@ -84,7 +84,12 @@
     --primary-color:hsl(46, 84%, 56%);    
 }
 
+<<<<<<< HEAD
 .title {
     text-align: center;
+=======
+.title{
+    text-align :center;
+>>>>>>> 65810e33fd3f492deb5eb35cb7391aa201ad3177
     color: var(--primary-color);
 }
