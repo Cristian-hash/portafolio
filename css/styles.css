@@ -1,57 +1,61 @@
 :root {
-    --primary-color:hsl(214, 84%, 56%);
-    --text-color:hsl(0, 0%, 31%);
-    --bg-color:hsl(0, 0%, 90%);
+    --primary-color: hsl(214, 84%, 56%);
+    --text-color: hsl(0, 0%, 31%);
+    --bg-color: hsl(0, 0%, 90%);
     --bg-card-color: hsl(0, 0%, 98%);
+    --transition: color 0.1s, background-color 0.2s ease-in-out;
 }
 
-    * {
-        box-sizing : border-box;
-    }
+* {
+    box-sizing: border-box;
+}
 
-    body    {
-        margin: 0;
-        background-color: var(--bg-color);
-        color: var(--text-color); 
-    }
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
 
-    body.dark{
-        --text-color:hsl(0, 0%, 83%);
-        --bg-color:hsl(0, 0%, 15%);
-        --bg-card-color: hsl(0, 0%, 20%);
-    }
+body.dark {
+    --text-color: hsl(0, 0%, 83%);
+    --bg-color: hsl(0, 0%, 15%);
+    --bg-card-color: hsl(0, 0%, 20%);
+}
 
-    .header{
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 75px;
     padding: 0 1.5em;
     background-color: var(--bg-card-color);
-    }
+    transition: var(--transition);
+}
 
-.switches{
+.switches {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.toggle-theme{
+.toggle-theme {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
+
 .toggle-theme__icon {
     margin-right: 0.5em;
     width: 20px;
 }
 
-.toggle-theme__text{
+.toggle-theme__text {
     font-size: 0.8rem;
 }
 
-.colors{
+.colors {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,8 +63,7 @@
     width: 100px;
 }
 
-
-.colors__item{
+.colors__item {
     width: 20px;
     height: 20px;
     border: 1px solid var(--text-color);
@@ -68,23 +71,24 @@
     cursor: pointer;
 }
 
-.colors__item--blue{
-    --primary-color:hsl(214, 84%, 56%);    
+.colors__item--blue {
+    --primary-color: hsl(214, 84%, 56%);
 }
 
-.colors__item--green{
-    --primary-color:hsl(150, 84%, 56%);    
+.colors__item--green {
+    --primary-color: hsl(150, 84%, 56%);
 }
 
-.colors__item--purple{
-    --primary-color:hsl(276, 84%, 56%);    
+.colors__item--purple {
+    --primary-color: hsl(276, 84%, 56%);
 }
 
-.colors__item--orange{
-    --primary-color:hsl(46, 84%, 56%);    
+.colors__item--orange {
+    --primary-color: hsl(46, 84%, 56%);
 }
 
-.title{
-    text-align :center;
+.title {
+    text-align: center;
     color: var(--primary-color);
+    transition: var(--transition);
 }
