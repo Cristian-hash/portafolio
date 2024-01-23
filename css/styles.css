@@ -16,12 +16,14 @@ a {
 }
 img {
     max-width: 100%;
+    display: block;
 }
 body {
     margin: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: var(--transition);
+    font-family: sans-serif;
 }
 body.dark {
     --text-color: hsl(0, 0%, 83%);
@@ -104,4 +106,30 @@ body.dark {
 .card__image-container {
     min-width: 320px;
     border-radius: var(--border-radius);
+    overflow: hidden;
+}
+.card__header {
+    padding: 1em 0;
+}
+
+.cart__title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.card__subtitle {
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+.card__link{
+    margin-bottom: 0.5em;
+}
+
+.card_text{
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.icon{
+    margin-right: 1em;
 }
