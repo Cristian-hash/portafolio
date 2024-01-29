@@ -142,10 +142,18 @@ body.dark {
     margin-bottom: 0.5em;
 }
 
-.card_text{
+.card__text{
     font-size: 0.9rem;
     line-height: 1.6;
 }
+/* Para los proyectos -para que ocupe toda la pagina*/
+
+.card--project{
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column: 1 / -1;
+}
+
 
 .skills{
     padding: 1em 0;
