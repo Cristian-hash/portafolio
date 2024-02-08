@@ -273,7 +273,9 @@ body.dark {
     font-size: 0.8rem;
     margin-bottom: 1.5em;
 }
-
+.project{
+    position: relative;
+}
 @media screen and (min-width: 760px) {
     .project {
         margin-left: 2em;
@@ -294,6 +296,13 @@ body.dark {
     display: flex;
     justify-content: space-between;
     width: 225px;
+}
+
+@media screen and (min-width: 760px){
+ .buttons{
+    position: absolute;
+    bottom:1em;
+   }
 }
 
 .button{
