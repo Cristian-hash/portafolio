@@ -58,6 +58,23 @@ body.dark {
 .toggle-theme__text {
     font-size: 0.8rem;
 }
+
+.flags__img{
+    display: block;
+    cursor:pointer;
+}
+
+.flags{
+    width:75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flags__item {
+    width: 30px;
+}
+
 .colors {
     display: flex;
     justify-content: space-between;

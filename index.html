@@ -1,252 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Portafolio</title>
-  </head>
-  <body class="dark">
-    <header class="header">
-      <div class="switches">
-        <div id="toggle-theme" class="toggle-theme">
-          <img
-            id="toggle-icon"
-            src="assets/icons/moon.svg"
-            alt="icon theme"
-            class="toggle-theme__icon"
-          />
-          <p id="toggle-text" class="toggle-theme__text">Dark Mode</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Portafolio</title>
+</head>
+<body class="dark">
+  <header class="header">
+    <!-- SOL Y LUNA -->
+    <div class="switches">
+      <div id="toggle-theme" class="toggle-theme">
+        <img id="toggle-icon" src="/assets/icons/moon.svg" alt="icon theme" class="toggle-theme__icon" />
+        <p id="toggle-text" class="toggle-theme__text">Dark Mode</p>
+      </div>
+    </div>
+    <!-- HASTA AQUI SOL Y LUNA -->
+    <!-- BANDERAS -->
+    <div id="flags" class="flags">
+      <div class="flags__item" data-languaje="es">
+        <img src="/assets/icons/es.svg" alt=""/>
+      </div>
+      <div class="flags__item" data-languaje="us">
+        <img src="/assets/icons/us.svg" alt=""/>
+      </div>
+    </div>
+    <!-- CULMINA BANDERAS -->
+    <!-- colores -->
+    <div id="toggle-colors" class="colors">
+      <div data-color="hsl(214, 84%, 56%)" class="colors__item colors__item--blue"></div>
+      <div data-color="hsl(150, 84%, 56%)" class="colors__item colors__item--green"></div>
+      <div data-color="hsl(276, 84%, 56%)" class="colors__item colors__item--purple"></div>
+      <div data-color="hsl(46, 84%, 56%)" class="colors__item colors__item--orange"></div>
+    </div>
+  </header>
+  <!-- Culmina colores -->
+  <main class="main">
+    <section class="column column--left">
+      <!-- PROFILE CARD PHOTO -->
+      <article class="card card--profile">
+        <div class="card__image-container">
+          <img src="assets/images/profile.jpg" alt="" />
         </div>
-      </div>
-      <div id="toggle-colors" class="colors">
-        <div
-          data-color="hsl(214, 84%, 56%)"
-          class="colors__item colors__item--blue"
-        ></div>
-        <div
-          data-color="hsl(150, 84%, 56%)"
-          class="colors__item colors__item--green"
-        ></div>
-        <div
-          data-color="hsl(276, 84%, 56%)"
-          class="colors__item colors__item--purple"
-        ></div>
-        <div
-          data-color="hsl(46, 84%, 56%)"
-          class="colors__item colors__item--orange"
-        ></div>
-      </div>
-    </header>
-    <main class="main">
-      <section class="column column--left">
-        <!-- PROFILE CARD PHOTO -->
-        <article class="card card--profile">
-          <div class="card__image-container">
-            <img src="assets/images/profile.jpg" alt="" />
+        <div class="card__header">
+          <h2 class="card__title no-margin">CrhistianDesings</h2>
+          <p class="card__subtitle">Front end developer</p>
+        </div>
+        <div class="card__body">
+          <!-- Tus enlaces y contenido aquí -->
+          <div class="card__link">
+            <i class="fas fa-envelope icon"></i>
+            <a href="mailto:cpacori@unsa.edu.pe">cpacori@unsa.edu.pe </a>
           </div>
-          <div class="card__header">
-            <h2 class="card__title no-margin">CrhistianDesings</h2>
-            <p class="card__subtitle">Front end developer</p>
+          <div class="card__link">
+            <i class="fas fa-phone-alt icon"></i>
+            <a href="tel:990281654">990281654 </a>
           </div>
-          <div class="card__body">
-            <!-- Tus enlaces y contenido aquí -->
-            <div class="card__link">
-              <i class="fas fa-envelope icon"></i>
-              <a href="mailto:cpacori@unsa.edu.pe">cpacori@unsa.edu.pe </a>
-            </div>
-            <div class="card__link">
-              <i class="fas fa-phone-alt icon"></i>
-              <a href="tel:990281654">990281654 </a>
-            </div>
-            <p class="card__text">
-              -RUC:10733464891 -Dispongo de 2 cuentas: BPC y Caja Arequipa(con
-              CCI) -Vacuna: PZIFER(2 dosis) <br />
-              -8 AÑOS DE EXPERIENCIA COMO DOCENTE.(Con contrato anual,Ciclo
-              Verano,clases particulares) Busco desarrollar mi carrera,
-              contribuyendo con mis habilidades en JavaScript, Python, Django y
-              MySQL para lograr proyectos finales que satisfagan las necesidades
-              y preferencias de los clientes. 30 años Permiso de conducir.
-            </p>
-          </div>
-        </article>
-
-        <!--SECCION DE EXPERIENCIA TRABAJOS-->
-        <!--SECCION DE EXPERIENCIA TRABAJOS-->
-        <!--SECCION DE EXPERIENCIA TRABAJOS-->
-        <article class="card card--experience">
-          <h2 class="card card__title">Experiences</h2>
-          <div class="experience">
-            <img
-              src="assets/images/logo.png"
-              alt="logo"
-              class="experience__image"
-            />
-            <div class="experience__info">
-              <p class="experience_time">Marzo 2017-2022</p>
-              <h3 class="experience__job">
-                GRUPO BRYCE-Docente Secundaria Matematica-Fisica
-              </h3>
-              <p class="experience__description">
-                -Docente tiempo completo. -Colegios Bryce ,Freud ,Joyce.
-              </p>
-            </div>
-          </div>
-
-          <div class="experience">
-            <img
-              src="assets/images/logo.png"
-              alt="logo"
-              class="experience__image"
-            />
-            <div class="experience__info">
-              <p class="experience_time">Febrero 2019-Noviembre 2019</p>
-              <h3 class="experience__job">TECSUP-App Movil Developer</h3>
-              <p class="experience__description">
-                -Técnico superior en desarrollo de aplicaciones y plataformas
-                con amplios conocimientos en back-end, desarrollados a través de
-                proyectos propios.EDUCASA
-              </p>
-            </div>
-          </div>
-
-          <div class="experience">
-            <img
-              src="assets/images/logo.png"
-              alt="logo"
-              class="experience__image"
-            />
-            <div class="experience__info">
-              <p class="experience_time">Marzo 2017-Diciembre 2022</p>
-              <h3 class="experience__job">ASDI-Traductor de ingles</h3>
-              <p class="experience__description">
-                -Nivel:Traductor en el idioma ingles.18 meses culminado en el
-                desarrollo de este idioma.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!--CULMINA SECCION DE EXPERIENCIA TRABAJOS-->
-        <!--CULMINA SECCION DE EXPERIENCIA TRABAJOS-->
-        <!--CULMINA SECCION DE EXPERIENCIA TRABAJOS-->
-
-        <!--SECCION HOBBIES-->
-        <!--SECCION HOBBIES-->
-        <!--SECCION HOBBIES-->
-
-        <article class="card card--hobbies">
-          <h2 class="card__title">SOY</h2>
-          <div class="card__image-container">
-            <img src="assets/images/hobbie.jpg" alt="Man on a bike" />
-          </div>
-          <h3 class="hobbie__title">CICLISTA</h3>
           <p class="card__text">
-            Contemplar la naturaleza,Lugares que visite fueron:PLAZA DE
-            MOLLEBAYA,BOCA DEL SAPO-SOCABAYA ,PLAZA DE CHARACATO,LOS PIÑUELOS
+            -RUC:10733464891 -Dispongo de 2 cuentas: BPC y Caja Arequipa(con CCI) -Vacuna: PZIFER(2 dosis) <br />
+            -8 AÑOS DE EXPERIENCIA COMO DOCENTE.(Con contrato anual,Ciclo Verano,clases particulares) Busco desarrollar mi carrera,
+            contribuyendo con mis habilidades en JavaScript, Python, Django y MySQL para lograr proyectos finales que satisfagan las necesidades
+            y preferencias de los clientes. 30 años Permiso de conducir.
           </p>
+        </div>
+      </article>
 
-          <h3 class="hobbie__title">GUITARRISTA</h3>
-          <p class="card__text">
-            GENERO: Rock,GRUPO FAVORITO:SodaStero, 3 años
-          </p>
-
-          <h3 class="hobbie__title">LECTOR</h3>
-          <p class="card__text">
-            Libro Favorito:Los 7 Habitos de la Gente Altamente Efectiva
-          </p>
-        </article>
-      </section>
-
-      <!--CULMINA SECCION HOBBIES-->
-      <!--CULMINA SECCION HOBBIES-->
-      <!--CULMINA SECCION HOBBIES-->
-
-      <!--SECCION DE HABILIDADES EN SOFTWARE-->
-      <!--SECCION DE HABILIDADES EN SOFTWARE-->
-      <!--SECCION DE HABILIDADES EN SOFTWARE-->
-      <section class="column column--right">
-        <article class="card">
-          <h2 class="card__title">Front End</h2>
-          <small>Años de EXPERIENCIA</small>
-          <div class="skills">
-            <div class="skills__header">
-              <span class="skills__start-level">0</span>
-              <span class="skills__start-level">5</span>
-            </div>
-            <div class="skills">
-              <div class="skills__item">
-                <p class="skills__tech">HTML</p>
-                <div class="skills__bar skills__bar--80"></div>
-              </div>
-              <div class="skills__item">
-                <p class="skills__tech">CSS</p>
-                <div class="skills__bar skills__bar--90"></div>
-              </div>
-              <div class="skills__item">
-                <p class="skills__tech">JavaScript</p>
-                <div class="skills__bar skills__bar--60"></div>
-              </div>
-              <div class="skills__item">
-                <p class="skills__tech">PHP</p>
-                <div class="skills__bar skills__bar--70"></div>
-              </div>
-              <div class="skills__item">
-                <p class="skills__tech">React</p>
-                <div class="skills__bar skills__bar--40"></div>
-              </div>
-            </div>
+      <!-- SECCION DE EXPERIENCIA TRABAJOS -->
+      <article class="card card--experience">
+        <h2 class="card card__title">Experiences</h2>
+        <div class="experience">
+          <img src="assets/images/logo.png" alt="logo" class="experience__image" />
+          <div class="experience__info">
+            <p class="experience_time">Marzo 2017-2022</p>
+            <h3 class="experience__job">GRUPO BRYCE-Docente Secundaria Matematica-Fisica</h3>
+            <p class="experience__description">-Docente tiempo completo. -Colegios Bryce ,Freud ,Joyce.</p>
           </div>
-        </article>
+        </div>
 
-        <article class="card">
-          <h2 class="card__title">Desing</h2>
+        <div class="experience">
+          <img src="assets/images/logo.png" alt="logo" class="experience__image" />
+          <div class="experience__info">
+            <p class="experience_time">Febrero 2019-Noviembre 2019</p>
+            <h3 class="experience__job">TECSUP-App Movil Developer</h3>
+            <p class="experience__description">-Técnico superior en desarrollo de aplicaciones y plataformas con amplios conocimientos en back-end, desarrollados a través de proyectos propios.EDUCASA</p>
+          </div>
+        </div>
+
+        <div class="experience">
+          <img src="assets/images/logo.png" alt="logo" class="experience__image" />
+          <div class="experience__info">
+            <p class="experience_time">Marzo 2017-Diciembre 2022</p>
+            <h3 class="experience__job">ASDI-Traductor de ingles</h3>
+            <p class="experience__description">-Nivel:Traductor en el idioma ingles.18 meses culminado en el desarrollo de este idioma.</p>
+          </div>
+        </div>
+      </article>
+      <!-- CULMINA SECCION DE EXPERIENCIA TRABAJOS -->
+
+      <!-- SECCION HOBBIES -->
+      <article class="card card--hobbies">
+        <h2 class="card__title">SOY</h2>
+        <div class="card__image-container">
+          <img src="assets/images/hobbie.jpg" alt="Man on a bike" />
+        </div>
+        <h3 class="hobbie__title">CICLISTA</h3>
+        <p class="card__text">
+          Contemplar la naturaleza,Lugares que visite fueron:PLAZA DE MOLLEBAYA,BOCA DEL SAPO-SOCABAYA ,PLAZA DE CHARACATO,LOS PIÑUELOS
+        </p>
+
+        <h3 class="hobbie__title">GUITARRISTA</h3>
+        <p class="card__text">
+          GENERO: Rock,GRUPO FAVORITO:SodaStero, 3 años
+        </p>
+
+        <h3 class="hobbie__title">LECTOR</h3>
+        <p class="card__text">
+          Libro Favorito:Los 7 Habitos de la Gente Altamente Efectiva
+        </p>
+      </article>
+    </section>
+    <!-- CULMINA SECCION HOBBIES -->
+
+    <!-- SECCION DE HABILIDADES EN SOFTWARE -->
+    <section class="column column--right">
+      <article class="card">
+        <h2 class="card__title">Front End</h2>
+        <small>Años de EXPERIENCIA</small>
+        <div class="skills">
+          <div class="skills__header">
+            <span class="skills__start-level">0</span>
+            <span class="skills__start-level">5</span>
+          </div>
           <div class="skills">
             <div class="skills__item">
-              <p class="skills__tech">Photoshop</p>
+              <p class="skills__tech">HTML</p>
               <div class="skills__bar skills__bar--80"></div>
             </div>
             <div class="skills__item">
-              <p class="skills__tech">Illustrator</p>
+              <p class="skills__tech">CSS</p>
               <div class="skills__bar skills__bar--90"></div>
             </div>
             <div class="skills__item">
-              <p class="skills__tech">Figma</p>
+              <p class="skills__tech">JavaScript</p>
               <div class="skills__bar skills__bar--60"></div>
             </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <h2 class="card__title">Multimedia</h2>
-          <div class="skills">
             <div class="skills__item">
-              <p class="skills__tech">Afther Effects</p>
-              <div class="skills__bar skills__bar--80"></div>
+              <p class="skills__tech">PHP</p>
+              <div class="skills__bar skills__bar--70"></div>
             </div>
             <div class="skills__item">
-              <p class="skills__tech">Promero</p>
-              <div class="skills__bar skills__bar--90"></div>
+              <p class="skills__tech">React</p>
+              <div class="skills__bar skills__bar--40"></div>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- PROYECTOS HECHOS :ESTOS TIENEN SU LINK PARA INGRESAR A CADA UNO Y ADEMAS SU ENLACE A GIT HUB -->
-        <!--1 ER PROYECTO-->
+      <article class="card">
+        <h2 class="card__title">Desing</h2>
+        <div class="skills">
+          <div class="skills__item">
+            <p class="skills__tech">Photoshop</p>
+            <div class="skills__bar skills__bar--80"></div>
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Illustrator</p>
+            <div class="skills__bar skills__bar--90"></div>
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Figma</p>
+            <div class="skills__bar skills__bar--60"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 class="card__title">Multimedia</h2>
+        <div class="skills">
+          <div class="skills__item">
+            <p class="skills__tech">Afther Effects</p>
+            <div class="skills__bar skills__bar--80"></div>
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Promero</p>
+            <div class="skills__bar skills__bar--90"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYECTOS HECHOS :ESTOS TIENEN SU LINK PARA INGRESAR A CADA UNO Y ADEMAS SU ENLACE A GIT HUB -->
+      <!--1 ER PROYECTO-->
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/project.jpg" alt="Landing page" class="card__image" />
+        </div>
+        <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#HTML</span>
+            <span class="project__tag">#CSS</span>
+            <span class="project__tag">#JavaScript</span>
+            <span class="project__tag">#Responsive</span>
+          </div>
+          <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
+          <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
+          <!-- TITULO DE LA PAGINA -->
+          <h2 class="card__title">Landing page</h2>
+          <!-- DESCRIPCION DE LA PAGINA -->
+          <p class="card__text">
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+          </p>
+          <p class="card__text">
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+          </p>
+          <div class="buttons">
+            <a href="#" class="button button--primary">Demo</a>
+            <a href="#" class="button button--ghost">Code</a>
+          </div>
+        </article>
+        <!-- 2DO PROYECTO -->
         <article class="card card--project">
           <div class="card__image-container">
-            <img
-              src="assets/images/project.jpg"
-              alt="Landing page"
-              class="card__image"
-            />
+            <img src="assets/images/project.jpg" alt="Landing page" class="card__image" />
           </div>
-          <!--TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
+          <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
           <div class="project">
             <div class="project__tags">
               <span class="project__tag">#HTML</span>
@@ -254,139 +237,61 @@
               <span class="project__tag">#JavaScript</span>
               <span class="project__tag">#Responsive</span>
             </div>
-          <!--OJOOOOOOOOO  AQUI BORRE UN   "</div>"   -->
-          <!--FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
-          <!--TITULO DE LA PAGINA-->
-          <h2 class="card__title">Landing page</h2>
-          <!--DESCRIPCION DE LA PAGINA-->
-          <p class="card__text">
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-          </p>
-          <p class="card__text">
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-          </p>
-          <div class="buttons">
-            <a href="#" class="button button--primary">Demo</a>
-            <a href="#" class="button button--ghost">Code</a>
-          </div>
-        </article>
-        <!--2DO PROYECTO-->
-        <article class="card card--project">
-          <div class="card__image-container">
-            <img
-              src="assets/images/project.jpg"
-              alt="Landing page"
-              class="card__image"
-            />
-          </div>
-          <!--TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
-          <div class="project">
-            <div class="project__tags">
-              <span class="project__tag">#HTML</span>
-              <span class="project__tag">#CSS</span>
-              <span class="project__tag">#JavaScript</span>
-              <span class="project__tag">#Responsive</span>
+            <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
+            <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
+            <!-- TITULO DE LA PAGINA -->
+            <h2 class="card__title">Landing page</h2>
+            <!-- DESCRIPCION DE LA PAGINA -->
+            <p class="card__text">
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            </p>
+            <p class="card__text">
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+            </p>
+            <div class="buttons">
+              <a href="#" class="button button--primary">Demo</a>
+              <a href="#" class="button button--ghost">Code</a>
             </div>
-          <!--OJOOOOOOOOO  AQUI BORRE UN   "</div>"   -->
-          <!--FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
-          <!--TITULO DE LA PAGINA-->
-          <h2 class="card__title">Landing page</h2>
-          <!--DESCRIPCION DE LA PAGINA-->
-          <p class="card__text">
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-          </p>
-          <p class="card__text">
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-            "Dinámico ingeniero de sistemas en formación apasionado por el
-            software y el cloud computing. Creo soluciones innovadoras con HTML,
-            CSS y amor por la tecnología.
-          </p>
-          <div class="buttons">
-            <a href="#" class="button button--primary">Demo</a>
-            <a href="#" class="button button--ghost">Code</a>
-          </div>
-        </article>
-<!--3 ER PROYECTO-->
-<article class="card card--project">
-  <div class="card__image-container">
-    <img
-      src="assets/images/project.jpg"
-      alt="Landing page"
-      class="card__image"
-    />
-  </div>
-  <!--TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
-  <div class="project">
-    <div class="project__tags">
-      <span class="project__tag">#HTML</span>
-      <span class="project__tag">#CSS</span>
-      <span class="project__tag">#JavaScript</span>
-      <span class="project__tag">#Responsive</span>
-    </div>
-  <!--OJOOOOOOOOO  AQUI BORRE UN   "</div>"   -->
-  <!--FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO-->
-  <!--TITULO DE LA PAGINA-->
-  <h2 class="card__title">Landing page</h2>
-  <!--DESCRIPCION DE LA PAGINA-->
-  <p class="card__text">
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-  </p>
-  <p class="card__text">
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-    "Dinámico ingeniero de sistemas en formación apasionado por el
-    software y el cloud computing. Creo soluciones innovadoras con HTML,
-    CSS y amor por la tecnología.
-  </p>
-  <div class="buttons">
-    <a href="#" class="button button--primary">Demo</a>
-    <a href="#" class="button button--ghost">Code</a>
-  </div>
-</article>
-
-      </section>
-    </main>
-    <script src="js/scripts.js"></script>
-  </body>
-</html>
+          </article>
+          <!-- 3 ER PROYECTO -->
+          <article class="card card--project">
+            <div class="card__image-container">
+              <img src="assets/images/project.jpg" alt="Landing page" class="card__image" />
+            </div>
+            <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
+            <div class="project">
+              <div class="project__tags">
+                <span class="project__tag">#HTML</span>
+                <span class="project__tag">#CSS</span>
+                <span class="project__tag">#JavaScript</span>
+                <span class="project__tag">#Responsive</span>
+              </div>
+              <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
+              <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
+              <!-- TITULO DE LA PAGINA -->
+              <h2 class="card__title">Landing page</h2>
+              <!-- DESCRIPCION DE LA PAGINA -->
+              <p class="card__text">
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              </p>
+              <p class="card__text">
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
+              </p>
+              <div class="buttons">
+                <a href="#" class="button button--primary">Demo</a>
+                <a href="#" class="button button--ghost">Code</a>
+              </div>
+            </article>
+          </section>
+        </main>
+        <script src="js/scripts.js"></script>
+      </body>
+    </html>
