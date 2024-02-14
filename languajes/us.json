@@ -1,0 +1,17 @@
+{
+    "profile": {
+        "rol": "Front-end developer",
+        "descripcion": "8 YEARS OF EXPERIENCE AS A TEACHING. (With annual contract, Summer Cycle, private classes) I seek to develop my career, contributing with my skills in JavaScript, Python, Django and MySQL to achieve final projects that satisfy the needs and preferences of clients. 30 years Driving license."
+    },
+    "experience": {
+        "first-job-title": "Back-end,Developer",
+        "first-job-dates": "January 2011 - December 2014",
+        "first-job-description": "Lorem ipsum dolor sit amet, consectetur adipis",
+        "second-job-title": "Front-end,Developer",
+        "second-job-dates": "January 2015 - December 2019",
+        "second-job-description": "Lorem ipsum dolor sit amet, consectetur adipis",
+        "last-job-title": "Front-end,Developer",
+        "last-job-dates": "January 2020 - December 2023",
+        "last-job-description": "Lorem ipsum dolor sit amet, consectetur adipis"
+    }
+}

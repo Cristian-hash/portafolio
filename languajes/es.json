@@ -1,0 +1,17 @@
+{
+    "profile": {
+        "rol": "Desarrollador Front-end",
+        "descripcion": "8 AÑOS DE EXPERIENCIA COMO DOCENTE.(Con contrato anual,Ciclo Verano,clases particulares) Busco desarrollar mi carrera,contribuyendo con mis habilidades en JavaScript, Python, Django y MySQL para lograr proyectos finales que satisfagan las necesidades y preferencias de los clientes. 30 años Permiso de conducir."
+    },
+    "experience": {
+        "first-job-title": "Desarrollador Back-end",
+        "first-job-dates": "Enero 2011 - Diciembre 2014",
+        "first-job-description": "Lorem ipsum dolor sit amet, consectetur adipis",
+        "second-job-title": "Desarrollador Front-end",
+        "second-job-dates": "Enero 2015 - Diciembre 2019",
+        "second-job-description": "Lorem ipsum dolor sit amet, consectetur adipis",
+        "last-job-title": "Desarrollador Front-end",
+        "last-job-dates": "Enero 2020 - Diciembre 2023",
+        "last-job-description": "Lorem ipsum dolor sit amet, consectetur adipis"
+    }
+}
