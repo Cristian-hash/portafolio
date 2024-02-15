@@ -4,11 +4,23 @@ const toggleText = document.getElementById("toggle-text");
 const toggleColors = document.getElementById("toggle-colors");
 const rootStyles = document.documentElement.style;
 
+//IDIOMAS
 const flagsElement = document.getElementById("flags");
 
+const changeLanguage = async (language) => {
+  // Usar comillas invertidas para interpolar la variable 'language'
+  const requestJson = await fetch(`./languages/${language}.json`);
+  const texts = await requestJson.json();
+
+  console.log(texts);
+};
+
 flagsElement.addEventListener("click", (e) => {
-  console.log(e.target.parentElement.dataset.language);
+  // Acceder al dataset del elemento clicado para obtener el idioma
+  changeLanguage(e.target.parentElement.dataset.language);
 });
+
+//TERMINAR IDIOMAS
 
 // Verificar si los elementos existen antes de acceder a sus propiedades
 toggleTheme.addEventListener("click", () => {
