@@ -50,6 +50,11 @@ body.dark {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    /**/
+    position: absolute;
+    top: 20px;     /* Ajusta según la posición vertical deseada */
+    left: 20px;    /* Ajusta según la posición horizontal deseada */
+    /**/
 }
 .toggle-theme__icon {
     margin-right: 0.5em;
@@ -76,6 +81,12 @@ body.dark {
 }
 
 .colors {
+    /*para que el color este en la esquina sup derecha*/
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+/**/
     display: flex;
     justify-content: space-between;
     align-items: center;

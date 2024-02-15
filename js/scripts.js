@@ -4,6 +4,12 @@ const toggleText = document.getElementById("toggle-text");
 const toggleColors = document.getElementById("toggle-colors");
 const rootStyles = document.documentElement.style;
 
+const flagsElement = document.getElementById("flags");
+
+flagsElement.addEventListener("click", (e) => {
+  console.log(e.target.parentElement.dataset.language);
+});
+
 // Verificar si los elementos existen antes de acceder a sus propiedades
 toggleTheme.addEventListener("click", () => {
   document.body.classList.toggle("dark");
