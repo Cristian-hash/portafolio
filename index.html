@@ -46,7 +46,7 @@
         </div>
         <div class="card__header">
           <h2 class="card__title no-margin">CrhistianDesings</h2>
-          <p class="card__subtitle">Front end developer</p>
+          <p class="card__subtitle" data-section="profile" data-value="rol">Front end developer</p>
         </div>
         <div class="card__body">
           <!-- Tus enlaces y contenido aquí -->
@@ -58,7 +58,7 @@
             <i class="fas fa-phone-alt icon"></i>
             <a href="tel:990281654">990281654 </a>
           </div>
-          <p class="card__text">
+          <p class="card__text" data-section="profile" data-value="description">
             -RUC:10733464891 -Dispongo de 2 cuentas: BPC y Caja Arequipa(con CCI) -Vacuna: PZIFER(2 dosis) <br />
             -8 AÑOS DE EXPERIENCIA COMO DOCENTE.(Con contrato anual,Ciclo Verano,clases particulares) Busco desarrollar mi carrera,
             contribuyendo con mis habilidades en JavaScript, Python, Django y MySQL para lograr proyectos finales que satisfagan las necesidades
@@ -71,20 +71,61 @@
       <article class="card card--experience">
         <h2 class="card card__title">Experiences</h2>
         <div class="experience">
-          <img src="assets/images/logo.png" alt="logo" class="experience__image" />
+          <img src="assets/images/logo.png" 
+          alt="logo" 
+          class="experience__image"
+          />
           <div class="experience__info">
-            <p class="experience_time">Marzo 2017-2022</p>
-            <h3 class="experience__job">GRUPO BRYCE-Docente Secundaria Matematica-Fisica</h3>
-            <p class="experience__description">-Docente tiempo completo. -Colegios Bryce ,Freud ,Joyce.</p>
+            <p 
+            class="experience_time"
+            data-section="experience"
+            data-value="first-job-dates"
+            >
+              Marzo 2017-2022
+          </p>
+          <h3
+            class="experience__job"
+            data-section="experience"
+            data-value="first-job-title"
+            >
+            GRUPO BRYCE-Docente Secundaria Matematica-Fisica
+          </h3>
+            <p
+            class="experience__description"
+            data-section="experience"
+            data-value="first-job-description"
+            >Docente tiempo completo. -Colegios Bryce ,Freud ,Joyce.
+            </p>
           </div>
         </div>
 
         <div class="experience">
-          <img src="assets/images/logo.png" alt="logo" class="experience__image" />
+          <img 
+            src="assets/images/logo.png" 
+            alt="logo" 
+            class="experience__image"
+          />
           <div class="experience__info">
-            <p class="experience_time">Febrero 2019-Noviembre 2019</p>
-            <h3 class="experience__job">TECSUP-App Movil Developer</h3>
-            <p class="experience__description">-Técnico superior en desarrollo de aplicaciones y plataformas con amplios conocimientos en back-end, desarrollados a través de proyectos propios.EDUCASA</p>
+            <p 
+            class="experience_time"
+            data-section="experience"
+            data-value="second-job-date"
+            >
+            Febrero 2019-Noviembre 2019
+          </p>
+            <h3 
+            class="experience__job"
+            data-section="experience"
+            data-value="second-job-title"
+            >
+            TECSUP-App Movil Developer
+          </h3>
+            <p 
+            class="experience__description"
+            data-section="experience"
+            data-value="second-job-description"
+            
+            >-Técnico superior en desarrollo de aplicaciones y plataformas con amplios conocimientos en back-end, desarrollados a través de proyectos propios.EDUCASA</p>
           </div>
         </div>
 
