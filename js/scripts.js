@@ -7,12 +7,16 @@ const rootStyles = document.documentElement.style;
 //IDIOMAS
 const flagsElement = document.getElementById("flags");
 
+const textsToChange = document.querySelectorAll("[data-section]");
+
 const changeLanguage = async (language) => {
   // Usar comillas invertidas para interpolar la variable 'language'
   const requestJson = await fetch(`./languages/${language}.json`);
   const texts = await requestJson.json();
 
-  console.log(texts);
+  for (textToChange of textsToChange) {
+    console.log(textsToChange);
+  }
 };
 
 flagsElement.addEventListener("click", (e) => {
