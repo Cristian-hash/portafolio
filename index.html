@@ -1,12 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
  <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <title>Portafolio</title>
+  <title>Crhistian - Ingeniero de Sistemas | Portafolio</title>
+  <style>
+    /* Corrección del problema de superposición de botones */
+    .card--project {
+      overflow: visible;
+      position: relative;
+    }
+    
+    .project {
+      padding: 25px 0 50px 0; /* Aumenté padding bottom */
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Mejora visual para los botones de proyectos */
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 40px; /* Aumenté margen superior */
+      margin-bottom: 30px; /* Aumenté margen inferior */
+      clear: both;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .button {
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .button--primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .button--primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    .button--ghost {
+      background: transparent;
+      color: var(--text-color, #333);
+      border: 2px solid var(--border-color, #e0e0e0);
+    }
+    
+    .button--ghost:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    /* Espaciado específico para contenido de proyectos */
+    .card__text {
+      margin-bottom: 25px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Espaciado especial para texto dentro de proyectos */
+    .project .card__text {
+      margin-bottom: 45px; /* Aumenté significativamente */
+      padding-bottom: 10px; /* Añadí padding adicional */
+    }
+    
+    .card__image {
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .project__tags {
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .project__tag {
+      background: linear-gradient(135deg, #333 0%, #555 100%);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.8em;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .card__title {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .experience__image {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      margin-right: 12px;
+    }
+    
+    .experience {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .experience__info {
+      flex: 1;
+    }
+    
+    .goals {
+      margin: 10px 0;
+    }
+    
+    .goals__item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+    /* Responsive Design */
+    @media (max-width: 700px) {
+      .main {
+        flex-direction: column;
+      }
+      .column {
+        width: 100%;
+      }
+      .card__image-container img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 50px; /* Más margen en móvil */
+        gap: 15px;
+      }
+      
+      .button {
+        text-align: center;
+        justify-content: center;
+        padding: 15px 20px;
+        font-size: 1em;
+      }
+      
+      .project .card__text {
+        margin-bottom: 55px; /* Aún más margen en móvil */
+      }
+      
+      .project {
+        padding: 35px 0 60px 0; /* Más padding en móvil */
+      }
+    }
+  </style>
 </head>
 <body class="dark">
   <header class="header">
@@ -37,139 +213,132 @@
     </div>
     <!-- Culmina colores -->
   </header>
-  <main class="main">
-    <section class="column column--left">
+  
+  <main class="main" style="display: flex; gap: 24px;">
+    <section class="column column--left" style="width: 40%;">
       <!-- PROFILE CARD PHOTO -->
       <article class="card card--profile">
         <div class="card__image-container">
-          <img src="assets/images/profile.jpg" alt="" />
+          <img src="assets/images/profile.jpg" alt="Crhistian - Ingeniero de Sistemas" class="card__image" />
         </div>
         <div class="card__header">
-          <h2 class="card__title no-margin">CrhistianDesings</h2>
-          <p class="card__subtitle" data-section="profile" data-value="rol">Front end developer</p>
+          <h2 class="card__title no-margin">Crhistian Pacori</h2>
+          <p class="card__subtitle" data-section="profile" data-value="rol">Ingeniero de Sistemas | Backend & Cloud Computing</p>
         </div>
         <div class="card__body">
-          <!-- Tus enlaces y contenido aquí -->
           <div class="card__link">
             <i class="fas fa-envelope icon"></i>
-            <a href="mailto:cpacori@unsa.edu.pe">cpacori@unsa.edu.pe </a>
+            <a href="mailto:cpacori@unsa.edu.pe">cpacori@unsa.edu.pe</a>
           </div>
           <div class="card__link">
             <i class="fas fa-phone-alt icon"></i>
-            <a href="tel:990281654">990281654 </a>
+            <a href="tel:990281654">990281654</a>
+          </div>
+          <div class="card__link">
+            <i class="fas fa-map-marker-alt icon"></i>
+            <span>Arequipa, Perú | 32 años</span>
           </div>
           <p class="card__text" data-section="profile" data-value="description">
-            -RUC:10733464891 <br />
-            Soy ingeniero de sistemas con especialidad en desarrollo web, aplicaciones móviles y cloud computing, enfocado en backend. Me gusta crear soluciones escalables, con código limpio y orientado a la optimización.
-Tengo más de 5 años de experiencia explicando programación y matemáticas, lo que me ha dado habilidades de comunicación y trabajo en equipo. Busco aportar en proyectos innovadores y seguir creciendo como desarrollador en una empresa que valore la calidad y la mejora continua.
+            ⚓ Mi símbolo es un ancla: representa mi base y seguridad para mi misión de vida.<br><br>
+            Soy ingeniero de sistemas especializado en backend y cloud computing. Me apasiona crear soluciones escalables, código limpio y optimización de sistemas.<br><br>
+            Tengo 5 años de experiencia enseñando programación y matemáticas, lo que me ha dado sólidas habilidades de comunicación, liderazgo y trabajo en equipo.<br><br>
+            🎯 <strong>Mi visión:</strong> Trabajar en Google y crear mi propia empresa de software y cloud computing.
           </p>
         </div>
       </article>
 
+      <!-- METAS Y SUEÑOS -->
+      <article class="card">
+        <h2 class="card__title">🎯 Metas & Inspiración</h2>
+        <div class="goals">
+          <div class="goals__item">🚀 Trabajar en Google</div>
+          <div class="goals__item">💼 Crear empresa de software & cloud computing</div>
+          <div class="goals__item">🏆 Lograr la "victoria privada" (Stephen Covey)</div>
+          <div class="goals__item">👨‍👩‍👧‍👦 Estar rodeado de familia en 20 años</div>
+        </div>
+        <p class="card__text">
+          <strong>💡 Inspiraciones:</strong><br>
+          • Miss Karim: "Pon tus decisiones antes que tus emociones"<br>
+          • Ing. Iquira: Maestría en programación de videojuegos<br>
+          • Cristiano Ronaldo: Disciplina y mentalidad<br>
+          • Stephen Covey: Los 7 hábitos de la gente altamente efectiva
+        </p>
+      </article>
+
       <!-- SECCION DE EXPERIENCIA TRABAJOS -->
       <article class="card card--experience">
-        <h2 class="card card__title">Experiences</h2>
+        <h2 class="card__title">💼 Experiencia Profesional</h2>
         <div class="experience">
-          <img src="assets/images/logo.png" 
-          alt="logo" 
-          class="experience__image"
-          />
+          <img src="assets/images/upgrade-logo.png" alt="Upgrade Systems" class="experience__image" />
           <div class="experience__info">
-            <p 
-            class="experience_time"
-            data-section="experience"
-            data-value="first-job-dates"
-            >
-              Marzo 2015-2020 (5 años)
-          </p>
-          <h3
-            class="experience__job"
-            data-section="experience"
-            data-value="first-job-title"
-            >
-            GRUPO BRYCE-Docente Secundaria Matematica-Fisica
-          </h3>
-            <p
-            class="experience__description"
-            data-section="experience"
-            data-value="first-job-description"
-            >Docente tiempo completo. -Colegios Bryce ,Freud ,Joyce.
+            <p class="experience_time">Septiembre 2024 - Presente</p>
+            <h3 class="experience__job">UPGRADE SISTEMAS - Frontend Developer Angular</h3>
+            <p class="experience__description">
+              Desarrollo de CRM empresarial con Angular y TypeScript. Trabajo en equipo frontend para módulos ERP.
             </p>
           </div>
         </div>
-
-        <div class="experience">
-          <img 
-            src="assets/images/logo.png" 
-            alt="logo" 
-            class="experience__image"
-          />
-          <div class="experience__info">
-            <p 
-            class="experience_time"
-            data-section="experience"
-            data-value="second-job-date"
-            >
-            Febrero 2019-Noviembre 2019
-          </p>
-            <h3 
-            class="experience__job"
-            data-section="experience"
-            data-value="second-job-title"
-            >
-            TECSUP-App Movil Developer
-          </h3>
-            <p 
-            class="experience__description"
-            data-section="experience"
-            data-value="second-job-description"
-            
-            >-Técnico superior en desarrollo de aplicaciones y plataformas con amplios conocimientos en back-end, desarrollados a través de proyectos propios.EDUCASA</p>
-          </div>
-        </div>
-
         <div class="experience">
           <img src="assets/images/logo.png" alt="logo" class="experience__image" />
           <div class="experience__info">
-            <p class="experience_time">Marzo 2017-Diciembre 2022</p>
-            <h3 class="experience__job">ASDI-Traductor de ingles</h3>
-            <p class="experience__description">-Nivel:Traductor en el idioma ingles.18 meses culminado en el desarrollo de este idioma.</p>
+            <p class="experience_time">Marzo 2015-2020 (5 años)</p>
+            <h3 class="experience__job">GRUPO BRYCE - Docente Matemática & Programación</h3>
+            <p class="experience__description">
+              Docente tiempo completo. Enseñé matemáticas y programación en secundaria. Colegios Bryce, Freud, Joyce.
+            </p>
           </div>
         </div>
-        
-
-
+        <div class="experience">
+          <img src="assets/images/tecsup-logo.png" alt="TECSUP" class="experience__image" />
+          <div class="experience__info">
+            <p class="experience_time">Febrero 2019-Noviembre 2019</p>
+            <h3 class="experience__job">TECSUP - Desarrollo de Apps Móviles</h3>
+            <p class="experience__description">
+              Técnico superior en desarrollo de aplicaciones móviles con conocimientos en backend y arquitectura de software.
+            </p>
+          </div>
+        </div>
+        <div class="experience">
+          <img src="assets/images/asdi-logo.png" alt="ASDI" class="experience__image" />
+          <div class="experience__info">
+            <p class="experience_time">Marzo 2017-Diciembre 2022</p>
+            <h3 class="experience__job">ASDI - Certificación en Inglés</h3>
+            <p class="experience__description">18 meses de especialización en idioma inglés técnico y conversacional.</p>
+          </div>
+        </div>
       </article>
       <!-- CULMINA SECCION DE EXPERIENCIA TRABAJOS -->
 
       <!-- SECCION HOBBIES -->
       <article class="card card--hobbies">
-        <h2 class="card__title">SOY</h2>
+        <h2 class="card__title">🎨 Mis Pasiones</h2>
         <div class="card__image-container">
-          <img src="assets/images/hobbie.jpg" alt="Man on a bike" />
+          <img src="assets/images/hobbie.jpg" alt="Ciclismo en Arequipa" class="card__image" />
         </div>
-        <h3 class="hobbie__title">CICLISTA</h3>
+        <h3 class="hobbie__title">🚴‍♂️ CICLISTA</h3>
         <p class="card__text">
-          Contemplar la naturaleza,Lugares que visite fueron:PLAZA DE MOLLEBAYA,BOCA DEL SAPO-SOCABAYA ,PLAZA DE CHARACATO,LOS PIÑUELOS
+          Contemplar la naturaleza de Arequipa. Lugares visitados: Plaza de Mollebaya, Boca del Sapo-Socabaya, Plaza de Characato, Los Piñuelos.
         </p>
-
-        <h3 class="hobbie__title">GUITARRISTA</h3>
+        <h3 class="hobbie__title">🎸 GUITARRISTA</h3>
         <p class="card__text">
-          GENERO: Rock,GRUPO FAVORITO:SodaStero, 3 años
+          Rock es mi género favorito. Soda Stereo y Adolescentes son mis grupos predilectos. 3 años tocando.
         </p>
-
-        <h3 class="hobbie__title">LECTOR</h3>
+        <h3 class="hobbie__title">📚 LECTOR APASIONADO</h3>
         <p class="card__text">
-          Libro Favorito:Los 7 Habitos de la Gente Altamente Efectiva
+          Literatura universal: Los Miserables, Los 7 Hábitos (Stephen Covey). También código y documentación técnica.
+        </p>
+        <h3 class="hobbie__title">🎬 CINÉFILO</h3>
+        <p class="card__text">
+          El Señor de los Anillos es mi saga favorita. Me inspira el arte de Miguel Ángel: David, La Piedad, El Rapto de Proserpina.
         </p>
       </article>
     </section>
     <!-- CULMINA SECCION HOBBIES -->
 
     <!-- SECCION DE HABILIDADES EN SOFTWARE -->
-    <section class="column column--right">
+    <section class="column column--right" style="width: 60%;">
       <article class="card">
-        <h2 class="card__title">Lenguages de programacion</h2>
+        <h2 class="card__title">💻 Lenguajes de Programación</h2>
         <small>Años de EXPERIENCIA</small>
         <div class="skills">
           <div class="skills__header">
@@ -181,294 +350,282 @@ Tengo más de 5 años de experiencia explicando programación y matemáticas, lo
               <p class="skills__tech">Java</p>
               <div class="skills__bar skills__bar--90"></div>
             </div>
-              <div class="skills__item">
-              <p class="skills__tech">TypeScript</p>
-              <div class="skills__bar skills__bar--70"></div>
-            </div>
             <div class="skills__item">
-              <p class="skills__tech">C++</p>
-              <div class="skills__bar skills__bar--70"></div>
+              <p class="skills__tech">TypeScript</p>
+              <div class="skills__bar skills__bar--80"></div>
             </div>
             <div class="skills__item">
               <p class="skills__tech">C#</p>
+              <div class="skills__bar skills__bar--80"></div> <!-- Aumentado -->
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Python</p>
               <div class="skills__bar skills__bar--70"></div>
             </div>
             <div class="skills__item">
-              <p class="skills__tech">python</p>
-              <div class="skills__bar skills__bar--50"></div>
+              <p class="skills__tech">JavaScript</p>
+              <div class="skills__bar skills__bar--80"></div> <!-- Aumentado -->
             </div>
           </div>
         </div>
       </article>
 
       <article class="card">
-        <h2 class="card__title">Frameworks</h2>
+        <h2 class="card__title">🚀 Frameworks & Tecnologías</h2>
         <div class="skills">
           <div class="skills__item">
             <p class="skills__tech">Angular</p>
+            <div class="skills__bar skills__bar--90"></div> <!-- Aumentado -->
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Spring Boot</p>
             <div class="skills__bar skills__bar--80"></div>
           </div>
           <div class="skills__item">
-            <p class="skills__tech">.Net</p>
-            <div class="skills__bar skills__bar--50"></div>
+            <p class="skills__tech">.NET Core</p>
+            <div class="skills__bar skills__bar--80"></div> <!-- Aumentado -->
           </div>
           <div class="skills__item">
             <p class="skills__tech">Django</p>
-            <div class="skills__bar skills__bar--50"></div>
+            <div class="skills__bar skills__bar--70"></div>
           </div>
           <div class="skills__item">
-            <p class="skills__tech">SpringBoot</p>
-            <div class="skills__bar skills__bar--50"></div>
+            <p class="skills__tech">Node.js</p>
+            <div class="skills__bar skills__bar--75"></div> <!-- Aumentado -->
           </div>
         </div>
       </article>
 
       <article class="card">
-        <h2 class="card__title">Calidad QA y Diseño</h2>
+        <h2 class="card__title">☁️ Cloud & DevOps</h2>
         <div class="skills">
           <div class="skills__item">
-            <p class="skills__tech">SonnarQube</p>
+            <p class="skills__tech">AWS</p>
+            <div class="skills__bar skills__bar--80"></div> <!-- Aumentado -->
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Docker</p>
+            <div class="skills__bar skills__bar--70"></div>
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">SonarQube</p>
             <div class="skills__bar skills__bar--90"></div>
           </div>
           <div class="skills__item">
-            <p class="skills__tech">Jazzmin</p>
+            <p class="skills__tech">Git & GitHub</p>
+            <div class="skills__bar skills__bar--90"></div> <!-- Aumentado -->
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 class="card__title">🎮 Diseño & Gamificación</h2>
+        <div class="skills">
+          <div class="skills__item">
+            <p class="skills__tech">Unity 3D</p>
             <div class="skills__bar skills__bar--80"></div>
           </div>
           <div class="skills__item">
             <p class="skills__tech">Figma</p>
-            <div class="skills__bar skills__bar--90"></div>
-          </div>
-          <div class="skills__item">
-            <p class="skills__tech">Unity</p>
             <div class="skills__bar skills__bar--80"></div>
           </div>
-              <div class="skills__item">
+          <div class="skills__item">
             <p class="skills__tech">Blender</p>
-            <div class="skills__bar skills__bar--60"></div>
+            <div class="skills__bar skills__bar--70"></div>
+          </div>
+          <div class="skills__item">
+            <p class="skills__tech">Patrones de Diseño</p>
+            <div class="skills__bar skills__bar--90"></div>
           </div>
         </div>
       </article>
 
-      <!-- PROYECTOS HECHOS :ESTOS TIENEN SU LINK PARA INGRESAR A CADA UNO Y ADEMAS SU ENLACE A GIT HUB -->
-
-   <!-- NUEVO PROYECTO CRM UPGRADE -->
-<article class="card card--project">
-  <div class="card__image-container">
-    <img src="assets/images/crm_upgrade.jpg" alt="Proyecto CRM Upgrade" class="card__image" />
-  </div>
-  <div class="project">
-    <div class="project__tags">
-      <span class="project__tag">#Angular</span>
-      <span class="project__tag">#TypeScript</span>
-      <span class="project__tag">#Frontend</span>
-      <span class="project__tag">#CRM</span>
-    </div>
-    <h2 class="card__title">CRM Upgrade <i>(Angular Frontend)</i></h2>
-    <p class="card__text">
-      Proyecto empresarial para la gestión de clientes y ventas, desarrollado en Angular como parte del equipo frontend en Upgrade. <br>
-      Funcionalidades: administración de clientes, seguimiento de ventas, integración con otros módulos ERP.
-    </p>
-    <div class="buttons">
-      <a href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original" class="button button--ghost" target="_blank">Repositorio GitHub</a>
-    </div>
-  </div>
-</article>
-<!-- NUEVO PROYECTO E-COMMERCE UPGRADE -->
-<article class="card card--project">
-  <div class="card__image-container">
-    <img src="assets/images/ecommerce_projecto.jpg" alt="Proyecto E-commerce Angular + ASP.NET" class="card__image" />
-  </div>
-
-  <div class="project">
-    <div class="project__tags">
-      <span class="project__tag">#Angular</span>
-      <span class="project__tag">#TypeScript</span>
-      <span class="project__tag">#ASP.NET</span>
-      <span class="project__tag">#C#</span>
-    </div>
-
-    <h2 class="card__title">E-commerce Upgrade <i>(Angular + ASP.NET)</i></h2>
-
-    <p class="card__text">
-      Proyecto grupal con Frontend en Angular y Backend en ASP.NET Core (C#). <br>
-      Funcionalidades: autenticación, gestión de productos, carrito de compras, roles de usuario y panel de administración.
-    </p>
-
-    <div class="buttons">
-      <a href="https://upgrade.com.pe/" class="button button--primary" target="_blank">Demo en vivo</a>
-   <!--   <a href="https://vm.tiktok.com/ZSSagTYtK/" class="button button--ghost" target="_blank">Video presentación</a>-->
-      <a href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ?usp=drive_link" class="button button--ghost" target="_blank">EVIDENCIA</a>
-
-    </div>
-  </div>
-</article>
-
-
-
-
-     <!--1 ER PROYECTO-->
+      <!-- PROYECTOS DESTACADOS -->
       <article class="card card--project">
         <div class="card__image-container">
-          <img src="assets/images/project.jpg" alt="Landing page" class="card__image" />
+          <img src="assets/images/crm_upgrade.png" alt="CRM Upgrade - Proyecto Angular" class="card__image" />
         </div>
-        <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
         <div class="project">
           <div class="project__tags">
-            <span class="project__tag">#HTML</span>
-            <span class="project__tag">#CSS</span>
+            <span class="project__tag">#Angular</span>
+            <span class="project__tag">#TypeScript</span>
+            <span class="project__tag">#Frontend</span>
+            <span class="project__tag">#CRM</span>
+          </div>
+          <h2 class="card__title">CRM Upgrade <i>(Angular Frontend)</i></h2>
+          <p class="card__text">
+            🏢 <strong>Proyecto empresarial actual</strong> - Sistema CRM para gestión de clientes y ventas en Upgrade Sistemas.<br>
+            ✨ Funcionalidades: administración de clientes, seguimiento de ventas, dashboards analíticos, integración con módulos ERP.
+          </p>
+          <div class="buttons">
+            <a href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original" class="button button--ghost" target="_blank">
+              <i class="fab fa-github"></i> Repo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/tesis-game.png" alt="Tesis - Juego Serio para Patrones de Diseño" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#Unity</span>
+            <span class="project__tag">#C#</span>
+            <span class="project__tag">#Gamificación</span>
+            <span class="project__tag">#Educación</span>
+          </div>
+          <h2 class="card__title">🎓 Tesis: Juego Serio para Patrones de Diseño</h2>
+          <p class="card__text">
+            📚 <strong>Proyecto de investigación</strong> - Desarrollo de un juego educativo con gamificación para enseñar patrones de diseño de software a estudiantes de secundaria.<br>
+            🎮 Implementa realidad virtual y mecánicas de juego para mejorar el aprendizaje de programación.
+          </p>
+          <div class="buttons">
+            <a href="#" class="button button--primary">
+              <i class="fas fa-play"></i>En curso
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/ecommerce_projecto.jpg" alt="E-commerce Angular + ASP.NET" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#Angular</span>
+            <span class="project__tag">#ASP.NET</span>
+            <span class="project__tag">#C#</span>
+            <span class="project__tag">#Fullstack</span>
+          </div>
+          <h2 class="card__title">E-commerce Fullstack <i>(Angular + ASP.NET)</i></h2>
+          <p class="card__text">
+            🛒 Proyecto completo con arquitectura escalable: Frontend Angular + Backend ASP.NET Core.<br>
+            🔐 Autenticación JWT, gestión de productos, carrito de compras, roles de usuario y panel de administración.
+          </p>
+          <div class="buttons">
+            <a href="https://upgrade.com.pe/" class="button button--primary" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+            <a href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ?usp=drive_link" class="button button--ghost" target="_blank">
+              <i class="fas fa-folder"></i> Doc's
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/project5.png" alt="Cachimbo Perdido - Simulador 3D UNSA" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#Unity</span>
+            <span class="project__tag">#Blender</span>
+            <span class="project__tag">#C#</span>
+            <span class="project__tag">#3D</span>
+          </div>
+          <h2 class="card__title">🏛️ Cachimbo Perdido - Simulador 3D UNSA</h2>
+          <p class="card__text">
+            🎮 Simulador 3D del edificio de Ingeniería de Sistemas UNSA desarrollado con Unity y Blender.<br>
+            🗺️ Ayuda a estudiantes nuevos a orientarse, acceder a información de horarios y aulas, reduciendo el estrés de adaptación.
+          </p>
+          <div class="buttons">
+            <a href="https://youtu.be/heKeMcDRqA4" class="button button--primary" target="_blank">
+              <i class="fab fa-youtube"></i> Demo
+            </a>
+            <a href="https://drive.google.com/drive/folders/1Tx0wlTMNt284wRP6AqErTHxhL-oizKmR" class="button button--ghost" target="_blank">
+              <i class="fas fa-code"></i> Código
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/project2.jpg" alt="Juego Submarino Ecológico Unity" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#Unity</span>
+            <span class="project__tag">#C#</span>
+            <span class="project__tag">#Ecología</span>
+            <span class="project__tag">#GameDev</span>
+          </div>
+          <h2 class="card__title">🌊 Juego Ecológico - Submarino Limpiador</h2>
+          <p class="card__text">
+            🚁 Videojuego educativo donde controlas un submarino para limpiar océanos contaminados.<br>
+            ♻️ Cada residuo recolectado contribuye a la limpieza del entorno marino. Programado en C# con Unity.
+          </p>
+          <div class="buttons">
+            <a href="https://youtu.be/2g3pHS48-uA" class="button button--primary" target="_blank">
+              <i class="fab fa-youtube"></i> Gameplay
+            </a>
+            <a href="https://drive.google.com/drive/folders/1RnHwNYajrVJ4sW8R4pGK18JXXo-Zin5M?usp=sharing" class="button button--ghost" target="_blank">
+              <i class="fas fa-download"></i> Descargar
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/project4.png" alt="App Móvil Recorridos Universidad" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#Java</span>
+            <span class="project__tag">#Android</span>
+            <span class="project__tag">#Kotlin</span>
+            <span class="project__tag">#SQLite</span>
+          </div>
+          <h2 class="card__title">📱 App Recorridos Universitarios</h2>
+          <p class="card__text">
+            🗺️ Aplicación Android para crear y buscar rutas dentro del campus universitario UNSA.<br>
+            📍 Desarrollada en Java/Kotlin con Android Studio y base de datos SQLite local.
+          </p>
+          <div class="buttons">
+            <a href="https://youtu.be/2gpRXp_Avj0?si=ep5dNg5INtUkhA-5" class="button button--primary" target="_blank">
+              <i class="fab fa-youtube"></i> Demo
+            </a>
+            <a href="https://github.com/LucelyMendoza/ProyectoFinal_IDNP/commits/main/" class="button button--ghost" target="_blank">
+              <i class="fab fa-github"></i> Código
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PORTAFOLIO PERSONAL -->
+      <article class="card card--project">
+        <div class="card__image-container">
+          <img src="assets/images/project.jpg" alt="Portafolio Personal Web" class="card__image" />
+        </div>
+        <div class="project">
+          <div class="project__tags">
+            <span class="project__tag">#HTML5</span>
+            <span class="project__tag">#CSS3</span>
             <span class="project__tag">#JavaScript</span>
             <span class="project__tag">#Responsive</span>
           </div>
-          <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
-          <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-          <!-- TITULO DE LA PAGINA -->
-          <h2 class="card__title">Portafolio Landing page</h2>
-          <!-- DESCRIPCION DE LA PAGINA -->
+          <h2 class="card__title">💼 Mi Portafolio Personal</h2>
           <p class="card__text">
-            DESCRIPCION:"Portafolio subido ,se puede verificar los commits en GITHUB  "
-            "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
-            <br>
-            <br>
-          </p>
-          <p class="card__text">
-            <br>
-            <br>
-            <br>
+            🎨 Este mismo sitio web que estás viendo ahora. Diseñado desde cero con HTML, CSS y JavaScript vanilla.<br>
+            📱 Totalmente responsive, con modo oscuro, cambio de idiomas y colores personalizables.
           </p>
           <div class="buttons">
-            <a href="https://youtu.be/RtjxZqAMimU" target="_blank" class="button button--primary">Demo</a>
-            <a href="https://github.com/Cristian-hash/portafolio/commits/master/" target="_blank" class="button button--ghost">Code</a>
+            <a href="https://youtu.be/RtjxZqAMimU" class="button button--primary" target="_blank">
+              <i class="fab fa-youtube"></i> Tour
+            </a>
+            <a href="https://github.com/Cristian-hash/portafolio/commits/master/" class="button button--ghost" target="_blank">
+              <i class="fab fa-github"></i> Código
+            </a>
           </div>
-        </article>
-        <!-- 2DO PROYECTO -->
-        <article class="card card--project">
-          <div class="card__image-container">
-            <img src="assets/images/project2.jpg" alt="Landing page" class="card__image" />
-          </div>
-          <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-          <div class="project">
-            <div class="project__tags">
-              <span class="project__tag">#C#</span>
-              <span class="project__tag">#CSS</span>
-              <span class="project__tag">#JavaScript</span>
-              <span class="project__tag">#Responsive</span>
-            </div>
-            <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
-            <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-            <!-- TITULO DE LA PAGINA -->
-            <h2 class="card__title">Video Juego UNITY</h2>
-            <!-- DESCRIPCION DE LA PAGINA -->
-            <p class="card__text">
-              LENGUAJE DE PROGRAMACION: C#
-              MOTOR GRAFICO: Unity
-              RECOGIDA DE BASURA: Utiliza tu submarino equipado con tecnología de última generación para recolectar desechos 
-              y residuos que contaminan los océanos. Cada pieza de basura recogida contribuye a la limpieza del entorno marino.
-            </p>
-            <p class="card__text">
-                 <br>
-            <br>
-            <br>
-            </p>
-            <div class="buttons">
-              <a href="https://youtu.be/2g3pHS48-uA" class="button button--primary">Demo</a>
-              <a href="https://drive.google.com/drive/folders/1RnHwNYajrVJ4sW8R4pGK18JXXo-Zin5M?usp=sharing" target="_blank" class="button button--ghost">Code</a>
-            </div>
-          </article>
-          <!-- 3 ER PROYECTO -->
-          <article class="card card--project">
-            <div class="card__image-container">
-              <img src="assets/images/project3.jpg" alt="Landing page" class="card__image" />
-            </div>
-            <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-            <div class="project">
-              <div class="project__tags">
-                <span class="project__tag">#HTML</span>
-                <span class="project__tag">#CSS</span>
-                <span class="project__tag">#JavaScript</span>
-                <span class="project__tag">#Python(BACKEND)</span>
-              </div>
-              <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
-              <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-              <!-- TITULO DE LA PAGINA -->
-              <h2 class="card__title">PAGINA WEB INSTITUCIONAL</h2>
-              <!-- DESCRIPCION DE LA PAGINA -->
-              <p class="card__text">
-                Proyecto desarrollado en el curso de Programacion Web 2 ,en la universidad de San Agustin de Arequipa ,en este proyecto se agregan caracteristicas para la Creacion 
-                Lectura ,Actualizacion y Borrado de ,tanto Profesores,Alumnos y cursos.
-              </p> 
-              <p class="card__text">
-                 <br>
-            <br>
-            <br>
-            </p>
-              <div class="buttons">
-                <a href="https://youtu.be/7txCSjxVHek" class="button button--primary">Demo</a>
-                <a href="https://github.com/2021A-PWEB2-EPIS-UNSA/proyecto-final-pweb2-grupo_a/commits/main" target="_blank" class="button button--ghost">Code</a>
-              </div>
-            </article>
-
-            <!-- 4to PROYECTO -->
-          <article class="card card--project">
-            <div class="card__image-container">
-              <img src="assets/images/project5.png" alt="Landing page" class="card__image" />
-            </div>
-            <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-            <div class="project">
-              <div class="project__tags">
-                <span class="project__tag">#Unity</span>
-                <span class="project__tag">#Blender</span>
-                <span class="project__tag">#C#</span>
-              </div>
-              <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
-              <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-              <!-- TITULO DE LA PAGINA -->
-              <h2 class="card__title">PROYECTO: CACHIMBO PERDIDO</h2>
-              <!-- DESCRIPCION DE LA PAGINA -->
-              <p class="card__text">
-                El proyecto consiste en un simulador 3D del edificio de la Escuela de Ingeniería de Sistemas de la UNSA, desarrollado con Unity y Blender, para ayudar a los estudiantes a orientarse y acceder a información sobre horarios y aulas. El objetivo es reducir el estrés y mejorar la adaptación y experiencia de los estudiantes mediante una exploración virtual del campus.
-              </p>
-              <p class="card__text">
-                 <br>
-                 <br>
-                 <br>
-              <div class="buttons">
-                <a href="https://youtu.be/heKeMcDRqA4" class="button button--primary">Demo</a>
-                <a href="https://drive.google.com/drive/folders/1Tx0wlTMNt284wRP6AqErTHxhL-oizKmR" target="_blank" class="button button--ghost">Code</a>
-              </div>
-            </article>
-             <!-- 4to PROYECTO -->
-          <article class="card card--project">
-            <div class="card__image-container">
-              <img src="assets/images/project4.png" alt="Landing page" class="card__image" />
-            </div>
-            <!-- TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-            <div class="project">
-              <div class="project__tags">
-                <span class="project__tag">#Java</span>
-                <span class="project__tag">#AndroidStudio</span>
-                <span class="project__tag">#Kotlin</span>
-                <span class="project__tag">#SQLite</span>
-              </div>
-              <!-- OJOOOOOOOOO AQUI BORRE UN "</div>" -->
-              <!-- FIN -TAGS -TECNOLOGIAS QUE USE PARA EL PROYECTO -->
-              <!-- TITULO DE LA PAGINA -->
-              <h2 class="card__title">APLICACION DE RECORRIDO</h2>
-              <!-- DESCRIPCION DE LA PAGINA -->
-              <p class="card__text">
-                Proyecto desarrollado en el curso de INTRODUCCION AL DESARROLLO DE NUEVAS PLATAFORMAS,en la universidad de San Agustin de Arequipa ,en este proyecto se agregan caracteristicas para la Creacion 
-               SE BUSCA UN RECORRIDO ATRAVEZ DE LA UNIVERSIDAD .
-              </p>
-              <p class="card__text">
-                "Dinámico ingeniero de sistemas en formación apasionado por el software y el cloud computing. Creo soluciones innovadoras con HTML, CSS y amor por la tecnología.
-              </p>
-              <div class="buttons">
-                <a href="https://youtu.be/2gpRXp_Avj0?si=ep5dNg5INtUkhA-5" class="button button--primary">Demo</a>
-                <a href="https://github.com/LucelyMendoza/ProyectoFinal_IDNP/commits/main/" target="_blank" class="button button--ghost">Code</a>
-              </div>
-            </article>
-         
-          </section>
+        </div>
+      </article>
+    </section>
   </main>
-        <script src="js/scripts.js"></script>
-      </body>
-  </html>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
