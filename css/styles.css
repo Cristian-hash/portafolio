@@ -382,3 +382,60 @@ body.dark {
         transform: translateX(var(--skill-bar-length));
     }
 }
+
+/* --- FIX: evita overflow horizontal en columnas y contenedores de imagen --- */
+
+/* Si tienes estilos inline en <main> (display:flex), obliga a los hijos a poder reducirse */
+.main, .column {
+  min-width: 0; /* permite que los hijos se encojan en flex/grid */
+}
+
+/* Evita que las imágenes o contenedores forcen ancho mínimo */
+.card__image-container {
+  min-width: 0;      /* evita forzar ancho mínimo */
+  width: 100%;       /* que el contenedor no exceda el ancho del padre */
+}
+
+/* Mejor: no fijes min-width grande en imágenes; controla con max-width */
+.card__image-container img,
+.card__image-container .card__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Si quieres que las tarjetas de proyecto sigan con dos columnas en escritorio,
+   pero en móvil se apilen correctamente: */
+@media screen and (max-width: 760px) {
+  /* Si tu main está en flex, forzar apilado en móvil */
+  .main {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Hacer que las columnas ocupen 100% en móvil */
+  .column {
+    width: 100% !important;
+  }
+
+  /* Evitar posición absoluta de botones en móvil (puede tapar contenido) */
+  .buttons {
+    position: static !important;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .buttons .button {
+    width: auto;
+    padding: 10px 12px;
+  }
+}
+
+/* Si aún ves barra horizontal como último recurso */
+html, body {
+  overflow-x: hidden; /* sólo como parche final */
+}
