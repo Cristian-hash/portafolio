@@ -1,60 +1,81 @@
-# Crhistian - Portafolio Web
+⛽ Sistema de Control de Combustibles – MCA Constructores
 
-> Portafolio personal de Crhistian Pacori — Ingeniero de Sistemas (Backend & Cloud).  
-> Muestra experiencia, proyectos destacados, habilidades y formación.
+Sistema web desarrollado para la gestión, control y detección de robo de combustible dentro de la empresa MCA Constructores.
+El proyecto fue desarrollado por un equipo liderado por mí, utilizando tecnologías modernas en backend y frontend, y actualmente se encuentra en producción.
 
----
+🚀 Estado del Proyecto
 
-## 🧾 Qué es
-Este repositorio contiene la versión web de mi portafolio personal: una página estática (HTML, CSS y JavaScript) que muestra mi foto, experiencia, proyectos, educación y contactos.
+✅ Sistema publicado y en funcionamiento
+🔗 Acceso al sistema:
+https://combustibles-mca.upgrade.com.pe/login
 
----
+🏗️ Empresa
 
-## ⚙️ Cómo funciona (explicado simple)
-1. El navegador carga `index.html`.  
-2. El CSS (archivo `css/styles.css` o estilos dentro de `<style>`) define la apariencia (colores, espaciados, modo oscuro).  
-3. El JavaScript (`js/scripts.js`) controla interacciones: cambio de tema (sol/luna), selección de idioma, cambio de color y comportamiento de botones.  
-4. Los botones y enlaces abren demos, repositorios y recursos externos (GitHub, YouTube, Notion).
+MCA Constructores
+📆 Duración del proyecto: Noviembre 2025 – Diciembre 2025
+👨‍💻 Rol: Líder de equipo
+🛠️ Tecnologías: .NET (Backend) – Angular (Frontend)
 
----
+🎯 Objetivo del Proyecto
 
-## 💡 Por qué importa
-Este sitio es tu carta de presentación digital: ayuda a reclutadores y colaboradores a conocer tus habilidades y proyectos de forma rápida y profesional. Además, bien optimizado mejora tu visibilidad y confianza profesional.
+Crear un sistema que permita:
 
----
+Controlar el consumo de combustible por unidad.
 
-## 📌 Identificar lo esencial (frase)
-Portafolio claro y accesible que muestra experiencia y proyectos para atraer oportunidades profesionales.
+Detectar posibles irregularidades o robos.
 
----
+Centralizar la información en una plataforma web segura.
 
-## ✨ Características principales
-- Perfil profesional con contacto.
-- Sección de proyectos con links a demos y repos.
-- Habilidades y frameworks (Angular, Spring Boot, Unity, AWS, etc.).
-- Modo oscuro y personalización de colores.
-- Diseño responsive para móvil y escritorio.
+Mejorar la toma de decisiones mediante reportes claros.
 
----
+🧠 Funcionalidades Principales
 
-## 🛠 Tecnologías
-- HTML5
-- CSS3 (variables y responsive)
-- JavaScript (vanilla)
-- Font Awesome (íconos)
-- Recursos: imágenes en `assets/images/`
+✅ Inicio de sesión de usuarios.
 
----
+✅ Registro y control de consumo de combustible.
 
-## ✅ Requisitos
-- Navegador moderno (Chrome, Firefox, Edge).
-- Para desarrollo local: editor de texto + Live Server (opcional).
+✅ Gestión de datos por unidades y responsables.
 
----
+✅ Visualización de reportes.
 
-## 🚀 Instalación y uso rápido
+✅ Sistema en entorno real de producción.
 
-### Opción 1 — Abrir localmente
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/Cristian-hash/portafolio.git
+🎨 Mockups (Diseño del Sistema)
+
+Los diseños iniciales del sistema pueden verse aquí:
+🔗 https://gemini.google.com/share/be92c844912b
+
+🧩 Repositorio del Proyecto
+
+Código fuente disponible en GitHub:
+🔗 https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025
+
+🏆 Aportes Personales
+
+✔️ Lideré el equipo de desarrollo.
+
+✔️ Coordiné diseño, frontend y backend.
+
+✔️ Validé flujos del sistema con base en necesidades reales.
+
+✔️ Apoyé en la toma de decisiones técnicas.
+
+✔️ Supervisé el despliegue a producción.
+
+🛡️ Tecnologías Utilizadas
+
+Frontend: Angular
+
+Backend: .NET
+
+Base de datos: (puedes agregar aquí si usaron SQL Server, MySQL, etc.)
+
+Servidor: Entorno web en producción
+
+📌 Notas Finales
+
+Este proyecto representa una experiencia real de desarrollo de software en entorno productivo, combinando liderazgo, programación, diseño y despliegue.
+
+📬 Contacto
+
+Si deseas más información sobre este proyecto, puedes contactarme a través de mi portafolio o GitHub.
