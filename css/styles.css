@@ -149,10 +149,12 @@ body.dark {
 }
 
 .card__image-container {
-    min-width: 320px;
+    width: 100%;
+    max-width: 320px;
     border-radius: var(--border-radius);
     overflow: hidden;
 }
+
 .card__header {
     padding: 1em 0;
 }
@@ -180,7 +182,7 @@ body.dark {
 /* Para los proyectos -para que ocupe toda la pagina*/
     .card--project{
         display: grid;
-        grid-template-columns: min-content 1fr;
+        grid-template-columns: 320px 1fr;
         grid-column: 1 / -1;
     }
 }
