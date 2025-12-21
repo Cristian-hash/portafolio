@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= META ================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Tailwind CSS via CDN -->
+    <!-- ================= TAILWIND CONFIG ================= -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome for icons -->
@@ -206,12 +207,28 @@
     </a>
 </div>
 
-                <div class="mt-12 flex justify-center space-x-6">
-                    <a href="#" class="text-2xl hover:text-aurora-green transition"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-2xl hover:text-aurora-blue transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-2xl hover:text-aurora-purple transition"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-2xl hover:text-aurora-pink transition"><i class="fab fa-instagram"></i></a>
-                </div>
+        <div class="mt-12 flex justify-center space-x-6">
+            <a href="https://github.com/Cristian-hash" 
+              target="_blank"
+              class="text-2xl hover:text-aurora-green transition">
+                <i class="fab fa-github"></i>
+            </a>
+
+<a href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
+   target="_blank"
+   class="text-2xl hover:text-aurora-blue transition">
+  <i class="fab fa-linkedin"></i>
+</a>
+
+
+<a href="https://www.facebook.com/profile.php?id=100009983569727&locale=es_LA"
+   target="_blank"
+   class="text-2xl hover:text-aurora-purple transition">
+  <i class="fab fa-facebook"></i>
+</a>
+
+        </div>
+
             </div>
         </div>
         <!-- Animated particles -->
@@ -276,7 +293,7 @@
         </div>
     </section>
 
-<!-- Experience Section -->
+<!-- Seccion Experiencia -->
 <section id="experience" class="py-20 bg-dark-card/30">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
@@ -321,6 +338,44 @@
         </div>
       </div>
 
+      <div class="relative pl-8 border-l-2 border-aurora-green">
+  <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"></div>
+
+  <div class="bg-dark-card p-6 rounded-lg card-hover">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-semibold text-aurora-green">
+        Desarrollo CRM Empresarial – Angular
+      </h3>
+      <span class="text-sm text-gray-400">
+        Sep 2024 – Nov 2024
+      </span>
+    </div>
+
+    <p class="text-gray-300 font-medium mb-2">
+      UPGRADE
+    </p>
+
+    <p class="text-gray-400 mb-3">
+      Participé en el desarrollo de un sistema CRM empresarial para la gestión de clientes y ventas.
+      Implementé interfaces, módulos administrativos y dashboards usando Angular y TypeScript,
+      integrando funcionalidades orientadas a procesos ERP.
+    </p>
+
+    <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+      <span>
+        <i class="fab fa-angular text-aurora-red"></i> Angular
+      </span>
+      <span>
+        <i class="fas fa-code text-aurora-blue"></i> TypeScript
+      </span>
+      <span>
+        <i class="fas fa-chart-line text-aurora-green"></i> Dashboards
+      </span>
+    </div>
+  </div>
+</div>
+
+
       <!-- UPGRADE -->
       <div class="relative pl-8 border-l-2 border-aurora-green">
         <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"></div>
@@ -360,7 +415,7 @@
       <!-- Freelancer -->
       <div class="relative pl-8 border-l-2 border-aurora-blue">
         <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-blue rounded-full"></div>
-        <div class="bg-dark-card p-6 rounded-lg card-hover">
+        <div class="bg-dark-card pX-6 rounded-lg card-hover">
           <div class="flex justify-between items-start mb-2">
             <h3 class="text-xl font-semibold text-aurora-blue">
               Freelancer – Desarrollo Web y Diseño UX/UI
@@ -577,7 +632,7 @@
 
                     <div>
                         <div class="flex justify-between mb-2">
-                            <span>Firebase</span>
+                            <span>MongoDB</span>
                             <span>70%</span>
                         </div>
                         <div class="w-full bg-dark-card rounded-full h-2">
@@ -595,21 +650,29 @@
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-                    <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                        <p>Git / GitHub / GitLab</p>
-                    </div>
+<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+  <i class="fab fa-git-alt text-3xl mb-2 text-aurora-red"></i>
+  <p>Git / GitHub / GitLab</p>
+</div>
 
-                    <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                        <p>Docker</p>
-                    </div>
 
-                    <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                        <p>SCRUM</p>
-                    </div>
+<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+  <i class="fab fa-docker text-3xl mb-2 docker-gradient"></i>
+  <p>Docker</p>
+</div>
 
-                    <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                        <p>Postman / Swagger</p>
-                    </div>
+
+  <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+  <i class="fas fa-users text-3xl mb-2 text-aurora-purple"></i>
+  <p>SCRUM</p>
+</div>
+
+
+<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+  <i class="fas fa-plug text-3xl mb-2 text-aurora-orange"></i>
+  <p>Postman / Swagger</p>
+</div>
+
 
                 </div>
             </div>
@@ -681,6 +744,18 @@
           Corrección de bugs, mejoras y soporte sobre sistemas existentes.
         </p>
       </div>
+
+      <!-- WordPress -->
+      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center">
+          <i class="fab fa-wordpress text-2xl text-dark-bg"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">WordPress</h3>
+        <p class="text-gray-400 text-sm">
+          Creación, personalización y mantenimiento de sitios web en WordPress.
+        </p>
+      </div>
+
 
     </div>
   </div>
@@ -1043,7 +1118,7 @@
 <section id="testimonials" class="py-20 bg-dark-card/30">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Testimonials & Feedback
+      Referencias Personales
     </h2>
 
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
@@ -1202,7 +1277,7 @@
 <section id="contact" class="py-20 bg-dark-card/30">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Contact
+      Contacto
     </h2>
 
     <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-10">
@@ -1224,15 +1299,23 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-            <i class="fab fa-linkedin-in text-dark-bg"></i>
-          </div>
-          <div>
-            <p class="text-gray-400 text-sm">LinkedIn</p>
-            <p class="font-medium">linkedin.com/in/tu-perfil</p>
-          </div>
-        </div>
+<div class="flex items-center gap-4">
+  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
+    <i class="fab fa-linkedin-in text-dark-bg"></i>
+  </div>
+
+  <div>
+    <p class="text-gray-400 text-sm">LinkedIn</p>
+    <a
+      href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
+      target="_blank"
+      class="font-medium hover:text-aurora-blue transition"
+    >
+      linkedin.com/in/crhistian-ziegler-pacori-paucar
+    </a>
+  </div>
+</div>
+
       </div>
 
       <!-- CTA simple -->

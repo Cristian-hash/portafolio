@@ -441,3 +441,10 @@ body.dark {
 html, body {
   overflow-x: hidden; /* sólo como parche final */
 }
+/*Agregado por mi*/
+
+.docker-gradient {
+  background: linear-gradient(135deg, #00aaff, #00ffaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
