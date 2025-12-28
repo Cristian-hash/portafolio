@@ -1,1429 +1,1828 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- ================= META ================= -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Aurora a Freefolio template by OSSPH</title>
-    <meta name="description" content="A modern dark portfolio template inspired by the Northern Lights with comprehensive sections and smooth animations">
-    <meta property="og:title" content="Aurora Portfolio Template">
-    <meta property="og:description" content="A Northern Lights inspired portfolio template with dark mode aesthetic">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="description"
+      content="A modern dark portfolio template inspired by the Northern Lights with comprehensive sections and smooth animations"
+    />
+    <meta property="og:title" content="Aurora Portfolio Template" />
+    <meta
+      property="og:description"
+      content="A Northern Lights inspired portfolio template with dark mode aesthetic"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- ================= TAILWIND CONFIG ================= -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Custom Tailwind Config -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aurora-green': '#00ffaa',
-                        'aurora-blue': '#00aaff',
-                        'aurora-purple': '#aa00ff',
-                        'aurora-pink': '#ff00aa',
-                        'dark-bg': '#0a0e1a',
-                        'dark-card': '#1a1f2e',
-                        'dark-border': '#2a2f3e'
-                    },
-                    animation: {
-                        'aurora': 'aurora 15s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s ease-in-out infinite',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'glow': 'glow 2s ease-in-out infinite'
-                    },
-                    keyframes: {
-                        aurora: {
-                            '0%, 100%': {
-                                backgroundPosition: '0% 50%',
-                                backgroundSize: '200% 200%'
-                            },
-                            '50%': {
-                                backgroundPosition: '100% 50%',
-                                backgroundSize: '200% 200%'
-                            }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        glow: {
-                            '0%, 100%': {
-                                boxShadow: '0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)'
-                            },
-                            '50%': {
-                                boxShadow: '0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)'
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "aurora-green": "#00ffaa",
+              "aurora-blue": "#00aaff",
+              "aurora-purple": "#aa00ff",
+              "aurora-pink": "#ff00aa",
+              "dark-bg": "#0a0e1a",
+              "dark-card": "#1a1f2e",
+              "dark-border": "#2a2f3e",
+            },
+            animation: {
+              aurora: "aurora 15s ease-in-out infinite",
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s ease-in-out infinite",
+              "slide-up": "slideUp 0.5s ease-out",
+              glow: "glow 2s ease-in-out infinite",
+            },
+            keyframes: {
+              aurora: {
+                "0%, 100%": {
+                  backgroundPosition: "0% 50%",
+                  backgroundSize: "200% 200%",
+                },
+                "50%": {
+                  backgroundPosition: "100% 50%",
+                  backgroundSize: "200% 200%",
+                },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              glow: {
+                "0%, 100%": {
+                  boxShadow:
+                    "0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)",
+                },
+                "50%": {
+                  boxShadow:
+                    "0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)",
+                },
+              },
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        /* Aurora gradient background */
-        .aurora-bg {
-            background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
-            background-size: 400% 400%;
-            animation: aurora 15s ease infinite;
-        }
+      /* Aurora gradient background */
+      .aurora-bg {
+        background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
+        background-size: 400% 400%;
+        animation: aurora 15s ease infinite;
+      }
 
-        /* Aurora light effect overlay */
-        .aurora-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100vh;
-            background:
-                radial-gradient(ellipse at top left, rgba(0, 255, 170, 0.15) 0%, transparent 40%),
-                radial-gradient(ellipse at top right, rgba(0, 170, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(ellipse at bottom left, rgba(170, 0, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(ellipse at bottom right, rgba(255, 0, 170, 0.1) 0%, transparent 40%);
-            pointer-events: none;
-            opacity: 0.7;
-        }
+      /* Aurora light effect overlay */
+      .aurora-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background: radial-gradient(
+            ellipse at top left,
+            rgba(0, 255, 170, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at top right,
+            rgba(0, 170, 255, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at bottom left,
+            rgba(170, 0, 255, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            ellipse at bottom right,
+            rgba(255, 0, 170, 0.1) 0%,
+            transparent 40%
+          );
+        pointer-events: none;
+        opacity: 0.7;
+      }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: #0a0e1a;
-        }
+      ::-webkit-scrollbar-track {
+        background: #0a0e1a;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #00ffaa, #00aaff);
-            border-radius: 5px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #00ffaa, #00aaff);
+        border-radius: 5px;
+      }
 
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #00ffaa 0%, #00aaff 50%, #aa00ff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #00ffaa 0%,
+          #00aaff 50%,
+          #aa00ff 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        /* Card hover effect */
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
+      /* Card hover effect */
+      .card-hover {
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
 
-        .card-hover:hover {
-            border-color: #00ffaa;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
-        }
+      .card-hover:hover {
+        border-color: #00ffaa;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
+      }
 
-        /* Progress bar animation */
-        @keyframes progressAnimation {
-            0% { width: 0%; }
+      /* Progress bar animation */
+      @keyframes progressAnimation {
+        0% {
+          width: 0%;
         }
+      }
 
-        .progress-bar {
-            animation: progressAnimation 2s ease-out forwards;
-        }
+      .progress-bar {
+        animation: progressAnimation 2s ease-out forwards;
+      }
     </style>
-</head>
-<body class="bg-dark-bg text-gray-200 aurora-bg">
+  </head>
+  <body class="bg-dark-bg text-gray-200 aurora-bg">
     <!-- Aurora overlay effect -->
     <div class="aurora-overlay"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Portafolio</div>
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#home" class="hover:text-aurora-green transition">Inicio</a></li>
-                    <li><a href="#about" class="hover:text-aurora-green transition">Acerca</a></li>
-                    <li><a href="#experience" class="hover:text-aurora-green transition">Experiencia</a></li>
-                    <li><a href="#skills" class="hover:text-aurora-green transition">Habilidades</a></li>
-                    <li><a href="#services" class="hover:text-aurora-green transition">Servicios</a></li>
-                    <li><a href="#portfolio" class="hover:text-aurora-green transition">Portafolio</a></li>
-                    <li><a href="#testimonials" class="hover:text-aurora-green transition">Referencias</a></li>
-                    <li><a href="#blog" class="hover:text-aurora-green transition">Blog</a></li>
-                    <li><a href="#contact" class="hover:text-aurora-green transition">Contacto</a></li>
-                </ul>
-                <!-- Mobile menu button -->
-                <button class="md:hidden" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-            <!-- Mobile menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="#home" class="block py-2 hover:text-aurora-green">Inicio</a>
-                <a href="#about" class="block py-2 hover:text-aurora-green">Acerca</a>
-                <a href="#experience" class="block py-2 hover:text-aurora-green">Experiencia</a>
-                <a href="#skills" class="block py-2 hover:text-aurora-green">Habiliades</a>
-                <a href="#services" class="block py-2 hover:text-aurora-green">Servicios</a>
-                <a href="#portfolio" class="block py-2 hover:text-aurora-green">Portafolio</a>
-                <a href="#testimonials" class="block py-2 hover:text-aurora-green">Referencias</a>
-                <a href="#blog" class="block py-2 hover:text-aurora-green">Blog</a>
-                <a href="#contact" class="block py-2 hover:text-aurora-green">Contacto</a>
-            </div>
+    <nav
+      class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50"
+    >
+      <div class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold gradient-text">Portafolio</div>
+          <ul class="hidden md:flex space-x-8">
+            <li>
+              <a href="#home" class="hover:text-aurora-green transition"
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="hover:text-aurora-green transition"
+                >Acerca</a
+              >
+            </li>
+            <li>
+              <a href="#experience" class="hover:text-aurora-green transition"
+                >Experiencia</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="hover:text-aurora-green transition"
+                >Habilidades</a
+              >
+            </li>
+            <li>
+              <a href="#services" class="hover:text-aurora-green transition"
+                >Servicios</a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" class="hover:text-aurora-green transition"
+                >Portafolio</a
+              >
+            </li>
+            <li>
+              <a href="#testimonials" class="hover:text-aurora-green transition"
+                >Referencias</a
+              >
+            </li>
+            <li>
+              <a href="#blog" class="hover:text-aurora-green transition"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-aurora-green transition"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+          <!-- Mobile menu button -->
+          <button class="md:hidden" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
         </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+          <a href="#home" class="block py-2 hover:text-aurora-green">Inicio</a>
+          <a href="#about" class="block py-2 hover:text-aurora-green">Acerca</a>
+          <a href="#experience" class="block py-2 hover:text-aurora-green"
+            >Experiencia</a
+          >
+          <a href="#skills" class="block py-2 hover:text-aurora-green"
+            >Habiliades</a
+          >
+          <a href="#services" class="block py-2 hover:text-aurora-green"
+            >Servicios</a
+          >
+          <a href="#portfolio" class="block py-2 hover:text-aurora-green"
+            >Portafolio</a
+          >
+          <a href="#testimonials" class="block py-2 hover:text-aurora-green"
+            >Referencias</a
+          >
+          <a href="#blog" class="block py-2 hover:text-aurora-green">Blog</a>
+          <a href="#contact" class="block py-2 hover:text-aurora-green"
+            >Contacto</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative">
-        <div class="container mx-auto px-6 text-center z-10">
-            <div class="animate-slide-up">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">
-                    Hola, yo soy <span class="gradient-text">Crhistian Z. Pacori</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-400 mb-8">Full-Stack Developer | UI/UX Designer | Ingenieria de Sistemas</p>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
-                Desarrollo soluciones de software escalables y bien estructuradas,
-                combinando backend, cloud y buenas prácticas para crear sistemas
-                confiables, claros y fáciles de mantener.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="#portfolio" class="px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105">
-        Mira mi trabajo
-    </a>
-    <a href="https://www.doyoubuzz.com/crhistian-ziegler-pacori-paucar" target="_blank" class="px-8 py-3 border-2 border-aurora-green rounded-full hover:bg-aurora-green hover:text-dark-bg transition transform hover:scale-105">
-        Descarga mi CV
-    </a>
-</div>
-
-        <div class="mt-12 flex justify-center space-x-6">
-            <a href="https://github.com/Cristian-hash" 
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center pt-20 relative"
+    >
+      <div class="container mx-auto px-6 text-center z-10">
+        <div class="animate-slide-up">
+          <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            Hola, yo soy <span class="gradient-text">Crhistian Z. Pacori</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-400 mb-8">
+            Full-Stack Developer | UI/UX Designer | Ingenieria de Sistemas
+          </p>
+          <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
+            Desarrollo soluciones de software escalables y bien estructuradas,
+            combinando backend, cloud y buenas prácticas para crear sistemas
+            confiables, claros y fáciles de mantener.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#portfolio"
+              class="px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105"
+            >
+              Mira mi trabajo
+            </a>
+            <a
+              href="https://www.doyoubuzz.com/crhistian-ziegler-pacori-paucar"
               target="_blank"
-              class="text-2xl hover:text-aurora-green transition">
-                <i class="fab fa-github"></i>
+              class="px-8 py-3 border-2 border-aurora-green rounded-full hover:bg-aurora-green hover:text-dark-bg transition transform hover:scale-105"
+            >
+              Descarga mi CV
+            </a>
+          </div>
+
+          <div class="mt-12 flex justify-center space-x-6">
+            <a
+              href="https://github.com/Cristian-hash"
+              target="_blank"
+              class="text-2xl hover:text-aurora-green transition"
+            >
+              <i class="fab fa-github"></i>
             </a>
 
-<a href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
-   target="_blank"
-   class="text-2xl hover:text-aurora-blue transition">
-  <i class="fab fa-linkedin"></i>
-</a>
+            <a
+              href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
+              target="_blank"
+              class="text-2xl hover:text-aurora-blue transition"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
 
-
-<a href="https://www.facebook.com/profile.php?id=100009983569727&locale=es_LA"
-   target="_blank"
-   class="text-2xl hover:text-aurora-purple transition">
-  <i class="fab fa-facebook"></i>
-</a>
-
+            <a
+              href="https://www.facebook.com/profile.php?id=100009983569727&locale=es_LA"
+              target="_blank"
+              class="text-2xl hover:text-aurora-purple transition"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
         </div>
-
-            </div>
-        </div>
-        <!-- Animated particles -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float" style="top: 20%; left: 10%;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float" style="top: 80%; left: 30%; animation-delay: 3s;"></div>
-        </div>
+      </div>
+      <!-- Animated particles -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float"
+          style="top: 20%; left: 10%"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float"
+          style="top: 60%; left: 80%; animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float"
+          style="top: 40%; left: 60%; animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float"
+          style="top: 80%; left: 30%; animation-delay: 3s"
+        ></div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Acerca de mi</h2>
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-<div class="flex flex-col gap-4 text-gray-400">
-  <div class="flex items-center gap-3">
-    <img src="assets/images/unsa.png" alt="Logo UNSA" class="w-10 h-10 object-contain">
-    <p>Soy egresado de <strong>Ingeniería de Sistemas</strong> por la <strong>Universidad Nacional de San Agustín (UNSA)</strong></p>
-  </div>
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Acerca de mi
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="flex flex-col gap-4 text-gray-400">
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/images/unsa.png"
+                  alt="Logo UNSA"
+                  class="w-10 h-10 object-contain"
+                />
+                <p>
+                  Soy egresado de <strong>Ingeniería de Sistemas</strong> por la
+                  <strong>Universidad Nacional de San Agustín (UNSA)</strong>
+                </p>
+              </div>
 
-  <div class="flex items-center gap-3">
-    <img src="assets/images/tecsup.png" alt="Logo TECSUP" class="w-10 h-10 object-contain">
-    <p>y cuento con formación en <strong>TECSUP</strong>, institución prestigiosa de Arequipa.</p>
-  </div>
-</div>
-
-<p class="text-gray-400 leading-relaxed mt-4">
-  Mi camino comenzó enseñando matemáticas y programación, lo que fortaleció mi capacidad para explicar, diseñar y estructurar sistemas claros. Hoy me enfoco en backend y cloud computing, construyendo aplicaciones escalables, mantenibles y pensadas para crecer sin romperse.
-</p>
-<div class="grid grid-cols-2 gap-4 pt-4">
-    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-        <div class="text-3xl font-bold text-aurora-green">15+</div>
-        <div class="text-sm text-gray-400">Proyectos Académicos y Reales</div>
-    </div>
-    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-        <div class="text-3xl font-bold text-aurora-blue">1+</div>
-        <div class="text-sm text-gray-400">Año de Experiencia Profesional</div>
-    </div>
-    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-        <div class="text-3xl font-bold text-aurora-purple">8+</div>
-        <div class="text-sm text-gray-400">Tecnologías Usadas</div>
-    </div>
-    <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-        <div class="text-3xl font-bold text-aurora-pink">5</div>
-        <div class="text-sm text-gray-400">Años como Docente</div>
-    </div>
-</div>
-
-                </div>
-                <div class="relative">
-                    <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
-<div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center overflow-hidden">
-    <img src="assets/images/profile.jpg" alt="Profile Photo" class="w-full h-full object-cover rounded-full">
-</div>
-
-                    </div>
-                </div>
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/images/tecsup.png"
+                  alt="Logo TECSUP"
+                  class="w-10 h-10 object-contain"
+                />
+                <p>
+                  y cuento con formación en <strong>TECSUP</strong>, institución
+                  prestigiosa de Arequipa.
+                </p>
+              </div>
             </div>
+
+            <p class="text-gray-400 leading-relaxed mt-4">
+              Mi camino comenzó enseñando matemáticas y programación, lo que
+              fortaleció mi capacidad para explicar, diseñar y estructurar
+              sistemas claros. Hoy me enfoco en backend y cloud computing,
+              construyendo aplicaciones escalables, mantenibles y pensadas para
+              crecer sin romperse.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-green">15+</div>
+                <div class="text-sm text-gray-400">
+                  Proyectos Académicos y Reales
+                </div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-blue">1+</div>
+                <div class="text-sm text-gray-400">
+                  Año de Experiencia Profesional
+                </div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-purple">8+</div>
+                <div class="text-sm text-gray-400">Tecnologías Usadas</div>
+              </div>
+              <div
+                class="bg-dark-card p-4 rounded-lg border border-dark-border"
+              >
+                <div class="text-3xl font-bold text-aurora-pink">5</div>
+                <div class="text-sm text-gray-400">Años como Docente</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1"
+            >
+              <div
+                class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="assets/images/profile.jpg"
+                  alt="Profile Photo"
+                  class="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-<!-- Seccion Experiencia -->
-<section id="experience" class="py-20 bg-dark-card/30">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Experiencia Laboral
-    </h2>
-
-    <div class="max-w-4xl mx-auto space-y-10">
-
-      <!-- MCA Constructores -->
-      <div class="relative pl-8 border-l-2 border-aurora-purple">
-        <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-purple rounded-full"></div>
-        <div class="bg-dark-card p-6 rounded-lg card-hover">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold text-aurora-purple">
-              Líder de Proyecto – Robo de Combustible
-            </h3>
-            <span class="text-sm text-gray-400">
-              Nov 2025 – Dic 2025
-            </span>
-          </div>
-
-          <p class="text-gray-300 font-medium mb-2">
-            MCA Constructores
-          </p>
-
-          <p class="text-gray-400 mb-3">
-            Lideré un equipo para desarrollar un sistema de detección de robo de combustible usando Angular y .NET. Diseñé flujos y mockups del sistema, asegurando la funcionalidad y la experiencia de usuario.
-          </p>
-
-          <div class="flex flex-wrap gap-4 text-sm">
-            <a href="https://gemini.google.com/share/be92c844912b"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fas fa-palette"></i> Mockups
-            </a>
-            <a href="https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fab fa-github"></i> Repositorio
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative pl-8 border-l-2 border-aurora-green">
-  <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"></div>
-
-  <div class="bg-dark-card p-6 rounded-lg card-hover">
-    <div class="flex justify-between items-start mb-2">
-      <h3 class="text-xl font-semibold text-aurora-green">
-        Desarrollo CRM Empresarial – Angular
-      </h3>
-      <span class="text-sm text-gray-400">
-        Sep 2024 – Nov 2024
-      </span>
-    </div>
-
-    <p class="text-gray-300 font-medium mb-2">
-      UPGRADE
-    </p>
-
-    <p class="text-gray-400 mb-3">
-      Participé en el desarrollo de un sistema CRM empresarial para la gestión de clientes y ventas.
-      Implementé interfaces, módulos administrativos y dashboards usando Angular y TypeScript,
-      integrando funcionalidades orientadas a procesos ERP.
-    </p>
-
-    <div class="flex flex-wrap gap-4 text-sm text-gray-400">
-      <span>
-        <i class="fab fa-angular text-aurora-red"></i> Angular
-      </span>
-      <span>
-        <i class="fas fa-code text-aurora-blue"></i> TypeScript
-      </span>
-      <span>
-        <i class="fas fa-chart-line text-aurora-green"></i> Dashboards
-      </span>
-    </div>
-  </div>
-</div>
-
-
-      <!-- UPGRADE -->
-      <div class="relative pl-8 border-l-2 border-aurora-green">
-        <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"></div>
-        <div class="bg-dark-card p-6 rounded-lg card-hover">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold text-aurora-green">
-              Programación de Requerimientos – Angular & .NET
-            </h3>
-            <span class="text-sm text-gray-400">
-              Abr 2025 – Ago 2025
-            </span>
-          </div>
-
-          <p class="text-gray-300 font-medium mb-2">
-            UPGRADE
-          </p>
-
-          <p class="text-gray-400 mb-3">
-            Diseñé flujos y mockups funcionales para un e-commerce, implementé formularios con validaciones en Angular y colaboré en tareas backend con .NET. Documenté requerimientos y trabajé bajo metodología ágil.
-          </p>
-
-          <div class="flex flex-wrap gap-4 text-sm">
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_FRONT/commits/main/"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fab fa-github"></i> Commits Frontend
-            </a>
-            <a href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ?usp=drive_link"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fas fa-folder"></i> Evidencias
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Freelancer -->
-      <div class="relative pl-8 border-l-2 border-aurora-blue">
-        <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-blue rounded-full"></div>
-        <div class="bg-dark-card pX-6 rounded-lg card-hover">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold text-aurora-blue">
-              Freelancer – Desarrollo Web y Diseño UX/UI
-            </h3>
-            <span class="text-sm text-gray-400">
-              Ene 2025 – Mar 2025
-            </span>
-          </div>
-
-          <p class="text-gray-300 font-medium mb-2">
-            Proyectos Freelance
-          </p>
-
-          <p class="text-gray-400 mb-3">
-            Diseñé y publiqué sitios web para empresas del sector eléctrico usando WordPress: configuración de dominios, diseño visual, estructura de contenido y plugins.<br>
-            Sitios web: <a href="https://inserservicioselectricos.com" target="_blank" class="text-aurora-green hover:text-aurora-blue">inserservicioselectricos.com</a> | <a href="https://joncarelectric.store" target="_blank" class="text-aurora-green hover:text-aurora-blue">joncarelectric.store</a><br>
-            Diseño UX/UI para portal inmobiliario académico usando Balsamiq, con filtros inteligentes, login con redes sociales y vista multimedia de propiedades.
-          </p>
-
-          <div class="flex flex-wrap gap-4 text-sm">
-            <a href="https://www.youtube.com/watch?v=io7rJ-7nPos&ab_channel=CRHISTIANZIEGLERPACORIPAUCAR"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fab fa-youtube"></i> Demo del proyecto
-            </a>
-            <span class="text-gray-400">Referencia: Ing. Jonathan Caira Noa – +51 991560905</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Programador Backend UNSA -->
-      <div class="relative pl-8 border-l-2 border-aurora-pink">
-        <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-pink rounded-full"></div>
-        <div class="bg-dark-card p-6 rounded-lg card-hover">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold text-aurora-pink">
-              Programador Backend – Sistema de Posgrado UNSA
-            </h3>
-            <span class="text-sm text-gray-400">
-              Jul 2024 – Dic 2024
-            </span>
-          </div>
-
-          <p class="text-gray-300 font-medium mb-2">
-            Universidad Nacional de San Agustín
-          </p>
-
-          <p class="text-gray-400 mb-3">
-            Desarrollo backend con NestJS y PostgreSQL. Implementación de APIs RESTful y gestión de base de datos para más de 20 usuarios.
-          </p>
-
-          <div class="flex flex-wrap gap-4 text-sm">
-            <a href="https://gitlab.com/pis2024-2-posgrado-unsa/posgrado-v1.0/-/commits/release?ref_type=heads"
-               target="_blank"
-               class="text-aurora-green hover:text-aurora-blue transition">
-              <i class="fab fa-gitlab"></i> Repositorio GitLab
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Docente de Matemática -->
-      <div class="relative pl-8 border-l-2 border-aurora-yellow">
-        <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-yellow rounded-full"></div>
-        <div class="bg-dark-card p-6 rounded-lg card-hover">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-semibold text-aurora-yellow">
-              Docente de Matemática – Nivel Secundaria
-            </h3>
-            <span class="text-sm text-gray-400">
-              Ene 2014 – Dic 2019
-            </span>
-          </div>
-
-          <p class="text-gray-300 font-medium mb-2">
-            GRUPO BRYCE – Colegio Bryce
-          </p>
-
-          <p class="text-gray-400 mb-3">
-            Enseñé matemáticas y física a estudiantes de secundaria por 5 años, incluyendo clases virtuales durante la pandemia.<br>
-            Implementé herramientas tecnológicas como Zoom, Google Classroom y Quizizz, elevando la participación y aprendizaje.<br>
-            Desarrollé materiales interactivos y técnicas adaptadas a diferentes estilos de aprendizaje, fortaleciendo comunicación, liderazgo y estructuración lógica de contenidos.
-          </p>
-
-          <div class="flex flex-wrap gap-4 text-sm">
-            <span class="text-gray-400">Referencia: Víctor Guiton – Director 958 318 980</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-    <!-- Skills Section -->
-<!-- Skills Section -->
-<section id="skills" class="py-20">
-    <div class="container mx-auto px-6">
+    <!-- Seccion Experiencia -->
+    <section id="experience" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-            Habilidades Técnicas
+          Experiencia Laboral
         </h2>
 
         <div class="max-w-4xl mx-auto space-y-10">
-
-            <!-- Frontend -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4 text-aurora-green">
-                    Frontend Development
+          <!-- MCA Constructores -->
+          <div class="relative pl-8 border-l-2 border-aurora-purple">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-purple rounded-full"
+            ></div>
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-purple">
+                  Líder de Proyecto – Robo de Combustible
                 </h3>
-                <div class="space-y-4">
+                <span class="text-sm text-gray-400"> Nov 2025 – Dic 2025 </span>
+              </div>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>Angular</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-300 font-medium mb-2">MCA Constructores</p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>TypeScript</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-400 mb-3">
+                Lideré un equipo para desarrollar un sistema de detección de
+                robo de combustible usando Angular y .NET. Diseñé flujos y
+                mockups del sistema, asegurando la funcionalidad y la
+                experiencia de usuario.
+              </p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>HTML / CSS</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-
-                </div>
+              <div class="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="https://gemini.google.com/share/be92c844912b"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fas fa-palette"></i> Mockups
+                </a>
+                <a
+                  href="https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fab fa-github"></i> Repositorio
+                </a>
+              </div>
             </div>
+          </div>
 
-            <!-- Backend -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4 text-aurora-blue">
-                    Backend Development
+          <div class="relative pl-8 border-l-2 border-aurora-green">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"
+            ></div>
+
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-green">
+                  Desarrollo CRM Empresarial – Angular
                 </h3>
-                <div class="space-y-4">
+                <span class="text-sm text-gray-400"> Sep 2024 – Nov 2024 </span>
+              </div>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>NestJS (Node.js)</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-300 font-medium mb-2">UPGRADE</p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>.NET (C#)</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-400 mb-3">
+                Participé en el desarrollo de un sistema CRM empresarial para la
+                gestión de clientes y ventas. Implementé interfaces, módulos
+                administrativos y dashboards usando Angular y TypeScript,
+                integrando funcionalidades orientadas a procesos ERP.
+              </p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>Python / Django</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-
-                </div>
+              <div class="flex flex-wrap gap-4 text-sm text-gray-400">
+                <span>
+                  <i class="fab fa-angular text-aurora-red"></i> Angular
+                </span>
+                <span>
+                  <i class="fas fa-code text-aurora-blue"></i> TypeScript
+                </span>
+                <span>
+                  <i class="fas fa-chart-line text-aurora-green"></i> Dashboards
+                </span>
+              </div>
             </div>
+          </div>
 
-            <!-- Databases -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
-                    Bases de Datos
+          <!-- UPGRADE -->
+          <div class="relative pl-8 border-l-2 border-aurora-green">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"
+            ></div>
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-green">
+                  Programación de Requerimientos – Angular & .NET
                 </h3>
-                <div class="space-y-4">
+                <span class="text-sm text-gray-400"> Abr 2025 – Ago 2025 </span>
+              </div>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>PostgreSQL</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-300 font-medium mb-2">UPGRADE</p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>MySQL</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
+              <p class="text-gray-400 mb-3">
+                Diseñé flujos y mockups funcionales para un e-commerce,
+                implementé formularios con validaciones en Angular y colaboré en
+                tareas backend con .NET. Documenté requerimientos y trabajé bajo
+                metodología ágil.
+              </p>
 
-                    <div>
-                        <div class="flex justify-between mb-2">
-                            <span>MongoDB</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="w-full bg-dark-card rounded-full h-2">
-                            <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full" style="width: 70%"></div>
-                        </div>
-                    </div>
-
-                </div>
+              <div class="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_FRONT/commits/main/"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fab fa-github"></i> Commits Frontend
+                </a>
+                <a
+                  href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ?usp=drive_link"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fas fa-folder"></i> Evidencias
+                </a>
+              </div>
             </div>
+          </div>
 
-            <!-- Tools & DevOps -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4 text-aurora-pink">
-                    Herramientas & Metodologías
+          <!-- Freelancer -->
+          <div class="relative pl-8 border-l-2 border-aurora-blue">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-blue rounded-full"
+            ></div>
+            <div class="bg-dark-card pX-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-blue">
+                  Freelancer – Desarrollo Web y Diseño UX/UI
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <span class="text-sm text-gray-400"> Ene 2025 – Mar 2025 </span>
+              </div>
 
-<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-  <i class="fab fa-git-alt text-3xl mb-2 text-aurora-red"></i>
-  <p>Git / GitHub / GitLab</p>
-</div>
+              <p class="text-gray-300 font-medium mb-2">Proyectos Freelance</p>
 
+              <p class="text-gray-400 mb-3">
+                Diseñé y publiqué sitios web para empresas del sector eléctrico
+                usando WordPress: configuración de dominios, diseño visual,
+                estructura de contenido y plugins.<br />
+                Sitios web:
+                <a
+                  href="https://inserservicioselectricos.com"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue"
+                  >inserservicioselectricos.com</a
+                >
+                |
+                <a
+                  href="https://joncarelectric.store"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue"
+                  >joncarelectric.store</a
+                ><br />
+                Diseño UX/UI para portal inmobiliario académico usando Balsamiq,
+                con filtros inteligentes, login con redes sociales y vista
+                multimedia de propiedades.
+              </p>
 
-<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-  <i class="fab fa-docker text-3xl mb-2 docker-gradient"></i>
-  <p>Docker</p>
-</div>
-
-
-  <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-  <i class="fas fa-users text-3xl mb-2 text-aurora-purple"></i>
-  <p>SCRUM</p>
-</div>
-
-
-<div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-  <i class="fas fa-plug text-3xl mb-2 text-aurora-orange"></i>
-  <p>Postman / Swagger</p>
-</div>
-
-
-                </div>
+              <div class="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="https://www.youtube.com/watch?v=io7rJ-7nPos&ab_channel=CRHISTIANZIEGLERPACORIPAUCAR"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fab fa-youtube"></i> Demo del proyecto
+                </a>
+                <span class="text-gray-400"
+                  >Referencia: Ing. Jonathan Caira Noa – +51 991560905</span
+                >
+              </div>
             </div>
+          </div>
 
+          <!-- Programador Backend UNSA -->
+          <div class="relative pl-8 border-l-2 border-aurora-pink">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-pink rounded-full"
+            ></div>
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-pink">
+                  Programador Backend – Sistema de Posgrado UNSA
+                </h3>
+                <span class="text-sm text-gray-400"> Jul 2024 – Dic 2024 </span>
+              </div>
+
+              <p class="text-gray-300 font-medium mb-2">
+                Universidad Nacional de San Agustín
+              </p>
+
+              <p class="text-gray-400 mb-3">
+                Desarrollo backend con NestJS y PostgreSQL. Implementación de
+                APIs RESTful y gestión de base de datos para más de 20 usuarios.
+              </p>
+
+              <div class="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="https://gitlab.com/pis2024-2-posgrado-unsa/posgrado-v1.0/-/commits/release?ref_type=heads"
+                  target="_blank"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                >
+                  <i class="fab fa-gitlab"></i> Repositorio GitLab
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Docente de Matemática -->
+          <div class="relative pl-8 border-l-2 border-aurora-yellow">
+            <div
+              class="absolute -left-2 top-0 w-4 h-4 bg-aurora-yellow rounded-full"
+            ></div>
+            <div class="bg-dark-card p-6 rounded-lg card-hover">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-aurora-yellow">
+                  Docente de Matemática – Habilidades blandas
+                </h3>
+                <span class="text-sm text-gray-400"> Ene 2014 – Dic 2019 </span>
+              </div>
+
+              <p class="text-gray-300 font-medium mb-2">
+                GRUPO BRYCE – Colegio Bryce
+              </p>
+
+              <p class="text-gray-400 mb-3">
+                Enseñé matemáticas y física a estudiantes de secundaria por 5
+                años, incluyendo clases virtuales durante la pandemia.<br />
+                Implementé herramientas tecnológicas como Zoom, Google Classroom
+                y Quizizz, elevando la participación y aprendizaje.<br />
+                Desarrollé materiales interactivos y técnicas adaptadas a
+                diferentes estilos de aprendizaje, fortaleciendo comunicación,
+                liderazgo y estructuración lógica de contenidos.
+              </p>
+
+              <div class="flex flex-wrap gap-4 text-sm">
+                <span class="text-gray-400"
+                  >Referencia: Víctor Guiton – Director 958 318 980</span
+                >
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Habilidades Técnicas
+        </h2>
+
+        <div class="max-w-4xl mx-auto space-y-10">
+          <!-- Frontend -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-aurora-green">
+              Frontend Development
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Angular</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>TypeScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>HTML / CSS</span>
+                  <span>75%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-aurora-blue">
+              Backend Development
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>NestJS (Node.js)</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>.NET (C#)</span>
+                  <span>70%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Python / Django</span>
+                  <span>70%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-aurora-purple">
+              Bases de Datos
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>PostgreSQL</span>
+                  <span>75%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>MySQL</span>
+                  <span>70%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>MongoDB</span>
+                  <span>70%</span>
+                </div>
+                <div class="w-full bg-dark-card rounded-full h-2">
+                  <div
+                    class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full"
+                    style="width: 70%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & DevOps -->
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-aurora-pink">
+              Herramientas & Metodologías
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-git-alt text-3xl mb-2 text-aurora-red"></i>
+                <p>Git / GitHub / GitLab</p>
+              </div>
+
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fab fa-docker text-3xl mb-2 docker-gradient"></i>
+                <p>Docker</p>
+              </div>
+
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fas fa-plug text-3xl mb-2 text-aurora-orange"></i>
+                <p>Postman / Swagger</p>
+              </div>
+              <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
+                <i class="fas fa-users text-3xl mb-2 text-aurora-purple"></i>
+                <p>SCRUM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Services Section -->
-<section id="services" class="py-20 bg-dark-card/30">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Servicios
-    </h2>
+    <section id="services" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Servicios
+        </h2>
 
-    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          <!-- Backend -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <i class="fas fa-server text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+            <p class="text-gray-400 text-sm">
+              Desarrollo de APIs, lógica de negocio y sistemas empresariales con
+              enfoque en mantenibilidad.
+            </p>
+          </div>
 
-      <!-- Backend -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-          <i class="fas fa-server text-2xl text-dark-bg"></i>
+          <!-- Frontend -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-code text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Frontend (Angular)</h3>
+            <p class="text-gray-400 text-sm">
+              Interfaces web con Angular, componentes reutilizables y consumo de
+              APIs REST.
+            </p>
+          </div>
+
+          <!-- Integrations -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <i class="fas fa-plug text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Sistema de integracion</h3>
+            <p class="text-gray-400 text-sm">
+              Integración entre sistemas, APIs externas y servicios existentes.
+            </p>
+          </div>
+
+          <!-- Cloud -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-pink to-aurora-green flex items-center justify-center"
+            >
+              <i class="fas fa-cloud text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Cloud & Deployment</h3>
+            <p class="text-gray-400 text-sm">
+              Despliegue de aplicaciones y entornos básicos en la nube.
+            </p>
+          </div>
+
+          <!-- Maintenance -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-tools text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Sistemas de mantenimiento
+            </h3>
+            <p class="text-gray-400 text-sm">
+              Corrección de bugs, mejoras y soporte sobre sistemas existentes.
+            </p>
+          </div>
+
+          <!-- WordPress -->
+          <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fab fa-wordpress text-2xl text-dark-bg"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">WordPress</h3>
+            <p class="text-gray-400 text-sm">
+              Creación, personalización y mantenimiento de sitios web en
+              WordPress.
+            </p>
+          </div>
         </div>
-        <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
-        <p class="text-gray-400 text-sm">
-          Desarrollo de APIs, lógica de negocio y sistemas empresariales con enfoque en mantenibilidad.
-        </p>
       </div>
-
-      <!-- Frontend -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-          <i class="fas fa-code text-2xl text-dark-bg"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Frontend (Angular)</h3>
-        <p class="text-gray-400 text-sm">
-          Interfaces web con Angular, componentes reutilizables y consumo de APIs REST.
-        </p>
-      </div>
-
-      <!-- Integrations -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-          <i class="fas fa-plug text-2xl text-dark-bg"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Sistema de integracion</h3>
-        <p class="text-gray-400 text-sm">
-          Integración entre sistemas, APIs externas y servicios existentes.
-        </p>
-      </div>
-
-      <!-- Cloud -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-pink to-aurora-green flex items-center justify-center">
-          <i class="fas fa-cloud text-2xl text-dark-bg"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Cloud & Deployment</h3>
-        <p class="text-gray-400 text-sm">
-          Despliegue de aplicaciones y entornos básicos en la nube.
-        </p>
-      </div>
-
-      <!-- Maintenance -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center">
-          <i class="fas fa-tools text-2xl text-dark-bg"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">Sistemas de mantenimiento</h3>
-        <p class="text-gray-400 text-sm">
-          Corrección de bugs, mejoras y soporte sobre sistemas existentes.
-        </p>
-      </div>
-
-      <!-- WordPress -->
-      <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center">
-          <i class="fab fa-wordpress text-2xl text-dark-bg"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-2">WordPress</h3>
-        <p class="text-gray-400 text-sm">
-          Creación, personalización y mantenimiento de sitios web en WordPress.
-        </p>
-      </div>
-
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Portfolio Section -->
-<section id="portfolio" class="py-20">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Portafolio
-    </h2>
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Portafolio
+        </h2>
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <!-- CRM Upgrade -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <i class="fas fa-building text-6xl text-dark-bg"></i>
+            </div>
 
-      <!-- CRM Upgrade -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-          <i class="fas fa-building text-6xl text-dark-bg"></i>
-        </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                CRM Upgrade
+                <span class="text-sm text-gray-400">(Angular Frontend)</span>
+              </h3>
 
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            CRM Upgrade <span class="text-sm text-gray-400">(Angular Frontend)</span>
-          </h3>
+              <p class="text-gray-400 mb-4">
+                Sistema CRM empresarial para gestión de clientes y ventas.
+                Desarrollo de interfaces, módulos ERP y dashboards
+                administrativos usando Angular y TypeScript.
+              </p>
 
-          <p class="text-gray-400 mb-4">
-            Sistema CRM empresarial para gestión de clientes y ventas.
-            Desarrollo de interfaces, módulos ERP y dashboards administrativos
-            usando Angular y TypeScript.
-          </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Angular</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >TypeScript</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >ERP</span
+                >
+              </div>
 
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Angular</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">TypeScript</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">ERP</span>
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Repositorio principal
+                </a>
+
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original/commits/18092025_CZPP_REU_018/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Commits Frontend
+                </a>
+
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/api-upgrade/commits/18092025_CZPP_REU_018/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Commits Backend
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div class="flex flex-col space-y-2">
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Repositorio principal
-            </a>
+          <!-- MCA Constructores -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-gas-pump text-6xl text-dark-bg"></i>
+            </div>
 
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/erp-upgrade-original/commits/18092025_CZPP_REU_018/"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Commits Frontend
-            </a>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                MCA Constructores
+                <span class="text-sm text-gray-400"
+                  >(Control de Combustible)</span
+                >
+              </h3>
 
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/api-upgrade/commits/18092025_CZPP_REU_018/"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Commits Backend
-            </a>
+              <p class="text-gray-400 mb-4">
+                Sistema para detección y control de robo de combustible.
+                Participé en la integración Angular + .NET y el diseño de
+                interfaces mediante mockups funcionales.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Angular</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >.NET</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >UX / Mockups</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://combustibles-mca.upgrade.com.pe/login"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Ver sistema
+                </a>
+
+                <a
+                  href="https://gemini.google.com/share/be92c844912b"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-palette"></i> Mockups
+                </a>
+
+                <a
+                  href="https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Repositorio
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-commerce Fullstack -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <i class="fas fa-shopping-cart text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                E-commerce Fullstack
+                <span class="text-sm text-gray-400">(Angular + ASP.NET)</span>
+              </h3>
+
+              <p class="text-gray-400 mb-4">
+                Plataforma de comercio electrónico con autenticación JWT,
+                gestión de productos, carrito de compras y panel administrativo.
+                Arquitectura pensada para escalar.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Angular</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >ASP.NET</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >JWT</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://upgrade.com.pe/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-external-link-alt"></i> Demo
+                </a>
+
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_FRONT/commits/main/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Frontend
+                </a>
+
+                <a
+                  href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_BACKEND"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Backend
+                </a>
+
+                <a
+                  href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-folder"></i> Documentación
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Juego Submarino Ecológico -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <!-- Logo de mando de juegos -->
+              <i class="fas fa-gamepad text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Juego Ecológico - Submarino Limpiador
+              </h3>
+
+              <p class="text-gray-400 mb-4">
+                Videojuego educativo donde controlas un submarino para limpiar
+                océanos contaminados.<br />
+                Cada residuo recolectado contribuye a la limpieza del entorno
+                marino. Programado en C# con Unity.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Unity</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >C#</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >Ecología</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                  >GameDev</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://youtu.be/2g3pHS48-uA"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube"></i> Gameplay
+                </a>
+
+                <a
+                  href="https://drive.google.com/drive/folders/1RnHwNYajrVJ4sW8R4pGK18JXXo-Zin5M?usp=sharing"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-download"></i> Descargar
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Cachimbo Perdido - Simulador 3D UNSA -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <!-- Logo de universidad / edificio -->
+              <i class="fas fa-vr-cardboard text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                🏛️ Cachimbo Perdido - Simulador 3D UNSA
+              </h3>
+
+              <p class="text-gray-400 mb-4">
+                🎮 Simulador 3D del edificio de Ingeniería de Sistemas UNSA
+                desarrollado con Unity y Blender.<br />
+                🗺️ Ayuda a estudiantes nuevos a orientarse, acceder a
+                información de horarios y aulas, reduciendo el estrés de
+                adaptación.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Unity</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >Blender</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >C#</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                  >3D</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://youtu.be/heKeMcDRqA4"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube"></i> Demo
+                </a>
+
+                <a
+                  href="https://drive.google.com/drive/folders/1Tx0wlTMNt284wRP6AqErTHxhL-oizKmR"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-code"></i> Código
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- App Recorridos Universitarios -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <!-- Logo de mapa para la app -->
+              <i class="fas fa-map-marked-alt text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                App Recorridos Universitarios
+              </h3>
+
+              <p class="text-gray-400 mb-4">
+                Aplicación Android para crear y buscar rutas dentro del campus
+                universitario UNSA.<br />
+                Desarrollada en Java/Kotlin con Android Studio y base de datos
+                SQLite local.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Java</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >Android</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >Kotlin</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                  >SQLite</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://youtu.be/2gpRXp_Avj0?si=ep5dNg5INtUkhA-5"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube"></i> Demo
+                </a>
+
+                <a
+                  href="https://github.com/LucelyMendoza/ProyectoFinal_IDNP/commits/main/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Código
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Portafolio Personal -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <!-- Logo de desarrollo web -->
+              <i class="fas fa-laptop-code text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Mi Portafolio Personal</h3>
+
+              <p class="text-gray-400 mb-4">
+                Este mismo sitio web que estás viendo ahora. Diseñado desde cero
+                con HTML, CSS y JavaScript vanilla.<br />
+                Totalmente responsive, con modo oscuro, cambio de idiomas y
+                colores personalizables.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >HTML5</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >CSS3</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                  >Responsive</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://youtu.be/RtjxZqAMimU"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube"></i> Tour
+                </a>
+
+                <a
+                  href="https://github.com/Cristian-hash/portafolio/commits/master/"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i> Código
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Tesis: Juego Serio para Patrones de Diseño -->
+          <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <!-- Logo de juego -->
+              <i class="fas fa-university text-6xl text-dark-bg"></i>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Tesis: Juego Serio para Patrones de Diseño
+              </h3>
+
+              <p class="text-gray-400 mb-4">
+                <strong>Proyecto de investigación</strong> - Desarrollo de un
+                juego educativo con gamificación para enseñar patrones de diseño
+                de software a estudiantes de secundaria.<br />
+                Implementa realidad virtual y mecánicas de juego para mejorar el
+                aprendizaje de programación.
+              </p>
+
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                  >Unity</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                  >C#</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                  >Gamificación</span
+                >
+                <span
+                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                  >Educación</span
+                >
+              </div>
+
+              <div class="flex flex-col space-y-2">
+                <a
+                  href="https://www.notion.so/S2-Lista-de-Actividades-Completa-1caa978ac38781ffb808fcf3c36b301f"
+                  class="text-aurora-green hover:text-aurora-blue transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-play"></i> En curso
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- MCA Constructores -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-          <i class="fas fa-gas-pump text-6xl text-dark-bg"></i>
-        </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Referencias Personales
+        </h2>
 
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            MCA Constructores <span class="text-sm text-gray-400">(Control de Combustible)</span>
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            Sistema para detección y control de robo de combustible.
-            Participé en la integración Angular + .NET y el diseño
-            de interfaces mediante mockups funcionales.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Angular</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">.NET</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">UX / Mockups</span>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-dark-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center text-xl font-bold text-dark-bg"
+              >
+                JC
+              </div>
+              <div class="ml-4">
+                <h4 class="font-semibold">Ing. Jonathan Caira Noa</h4>
+                <p class="text-sm text-gray-400">
+                  Líder Técnico · Upgrade Sistemas
+                </p>
+                <p class="text-sm text-gray-400">+51 997560905</p>
+              </div>
+            </div>
+            <p class="text-gray-400 italic">
+              "Crhistian demuestra compromiso y capacidad para adaptarse
+              rápidamente. Su experiencia en Angular, documentación clara y
+              comunicación efectiva aportan valor real al equipo de desarrollo."
+            </p>
+            <div class="mt-4 text-aurora-green">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
           </div>
 
-          <div class="flex flex-col space-y-2">
-            <a href="https://combustibles-mca.upgrade.com.pe/login"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt"></i> Ver sistema
-            </a>
-
-            <a href="https://gemini.google.com/share/be92c844912b"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-palette"></i> Mockups
-            </a>
-
-            <a href="https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Repositorio
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- E-commerce Fullstack -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-          <i class="fas fa-shopping-cart text-6xl text-dark-bg"></i>
-        </div>
-
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            E-commerce Fullstack <span class="text-sm text-gray-400">(Angular + ASP.NET)</span>
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            Plataforma de comercio electrónico con autenticación JWT,
-            gestión de productos, carrito de compras y panel administrativo.
-            Arquitectura pensada para escalar.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Angular</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">ASP.NET</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">JWT</span>
+          <!-- Testimonial 2 -->
+          <div class="bg-dark-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center text-xl font-bold text-dark-bg"
+              >
+                UP
+              </div>
+              <div class="ml-4">
+                <h4 class="font-semibold">Equipo Frontend</h4>
+                <p class="text-sm text-gray-400">Proyecto CRM Empresarial</p>
+              </div>
+            </div>
+            <p class="text-gray-400 italic">
+              "Trabajar con Crhistian es sencillo: comunica bien, pregunta
+              cuando no entiende y se enfoca en resolver problemas reales. Su
+              background en docencia se nota en la forma clara de explicar."
+            </p>
+            <div class="mt-4 text-aurora-blue">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
           </div>
 
-          <div class="flex flex-col space-y-2">
-            <a href="https://upgrade.com.pe/"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt"></i> Demo
-            </a>
-
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_FRONT/commits/main/"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Frontend
-            </a>
-
-            <a href="https://github.com/GRUPOUPGRADESISTEMAS/ECOMMERCE_UPGRADE_RECOPILACION_BACKEND"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Backend
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1xWrugSdt4M-gDxrMJd9J3s0uJjeOVztJ"
-               class="text-aurora-green hover:text-aurora-blue transition"
-               target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-folder"></i> Documentación
-            </a>
-          </div>
-        </div>
-
-
-      
-
-
-      </div>
-<!-- Juego Submarino Ecológico -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-          <!-- Logo de mando de juegos -->
-          <i class="fas fa-gamepad text-6xl text-dark-bg"></i>
-        </div>
-
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            Juego Ecológico - Submarino Limpiador
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            Videojuego educativo donde controlas un submarino para limpiar océanos contaminados.<br>
-            Cada residuo recolectado contribuye a la limpieza del entorno marino. Programado en C# con Unity.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Unity</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">C#</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">Ecología</span>
-            <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">GameDev</span>
-          </div>
-
-          <div class="flex flex-col space-y-2">
-            <a href="https://youtu.be/2g3pHS48-uA"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-youtube"></i> Gameplay
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1RnHwNYajrVJ4sW8R4pGK18JXXo-Zin5M?usp=sharing"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-download"></i> Descargar
-            </a>
+          <!-- Testimonial 3 -->
+          <div class="bg-dark-card p-6 rounded-lg md:col-span-2">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center text-xl font-bold text-dark-bg"
+              >
+                BR
+              </div>
+              <div class="ml-4">
+                <h4 class="font-semibold">Grupo Bryce</h4>
+                <p class="text-sm text-gray-400">Institución Educativa</p>
+              </div>
+            </div>
+            <p class="text-gray-400 italic">
+              "Durante más de 5 años, Crhistian destacó como docente por su
+              responsabilidad, liderazgo y capacidad para explicar conceptos
+              complejos de forma sencilla. Hoy esas habilidades se reflejan en
+              su trabajo como desarrollador backend."
+            </p>
+            <div class="mt-4 text-aurora-purple">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
           </div>
         </div>
       </div>
-<!-- Cachimbo Perdido - Simulador 3D UNSA -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-          <!-- Logo de universidad / edificio -->
-          <i class="fas fa-vr-cardboard text-6xl text-dark-bg"></i>
-        </div>
-
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            🏛️ Cachimbo Perdido - Simulador 3D UNSA
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            🎮 Simulador 3D del edificio de Ingeniería de Sistemas UNSA desarrollado con Unity y Blender.<br>
-            🗺️ Ayuda a estudiantes nuevos a orientarse, acceder a información de horarios y aulas, reduciendo el estrés de adaptación.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Unity</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Blender</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">C#</span>
-            <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">3D</span>
-          </div>
-
-          <div class="flex flex-col space-y-2">
-            <a href="https://youtu.be/heKeMcDRqA4"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-youtube"></i> Demo
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1Tx0wlTMNt284wRP6AqErTHxhL-oizKmR"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-code"></i> Código
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- App Recorridos Universitarios -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-          <!-- Logo de mapa para la app -->
-          <i class="fas fa-map-marked-alt text-6xl text-dark-bg"></i>
-        </div>
-
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            App Recorridos Universitarios
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            Aplicación Android para crear y buscar rutas dentro del campus universitario UNSA.<br>
-            Desarrollada en Java/Kotlin con Android Studio y base de datos SQLite local.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Java</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">Android</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">Kotlin</span>
-            <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">SQLite</span>
-          </div>
-
-          <div class="flex flex-col space-y-2">
-            <a href="https://youtu.be/2gpRXp_Avj0?si=ep5dNg5INtUkhA-5"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-youtube"></i> Demo
-            </a>
-
-            <a href="https://github.com/LucelyMendoza/ProyectoFinal_IDNP/commits/main/"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Código
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Portafolio Personal -->
-      <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-        <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-          <!-- Logo de desarrollo web -->
-          <i class="fas fa-laptop-code text-6xl text-dark-bg"></i>
-        </div>
-
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">
-            Mi Portafolio Personal
-          </h3>
-
-          <p class="text-gray-400 mb-4">
-            Este mismo sitio web que estás viendo ahora. Diseñado desde cero con HTML, CSS y JavaScript vanilla.<br>
-            Totalmente responsive, con modo oscuro, cambio de idiomas y colores personalizables.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">HTML5</span>
-            <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">CSS3</span>
-            <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">JavaScript</span>
-            <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">Responsive</span>
-          </div>
-
-          <div class="flex flex-col space-y-2">
-            <a href="https://youtu.be/RtjxZqAMimU"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-youtube"></i> Tour
-            </a>
-
-            <a href="https://github.com/Cristian-hash/portafolio/commits/master/"
-              class="text-aurora-green hover:text-aurora-blue transition"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github"></i> Código
-            </a>
-          </div>
-        </div>
-      </div>
-<!-- Tesis: Juego Serio para Patrones de Diseño -->
-<div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
-  <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-    <!-- Logo de juego -->
-    <i class="fas fa-university text-6xl text-dark-bg"></i>
-  </div>
-
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">
-      Tesis: Juego Serio para Patrones de Diseño
-    </h3>
-
-    <p class="text-gray-400 mb-4">
-      <strong>Proyecto de investigación</strong> - Desarrollo de un juego educativo con gamificación para enseñar patrones de diseño de software a estudiantes de secundaria.<br>
-      Implementa realidad virtual y mecánicas de juego para mejorar el aprendizaje de programación.
-    </p>
-
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs">Unity</span>
-      <span class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs">C#</span>
-      <span class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs">Gamificación</span>
-      <span class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs">Educación</span>
-    </div>
-
-    <div class="flex flex-col space-y-2">
-      <a href="https://www.notion.so/S2-Lista-de-Actividades-Completa-1caa978ac38781ffb808fcf3c36b301f"
-         class="text-aurora-green hover:text-aurora-blue transition"
-         target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-play"></i> En curso
-      </a>
-    </div>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-dark-card/30">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Referencias Personales
-    </h2>
-
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-
-      <!-- Testimonial 1 -->
-      <div class="bg-dark-card p-6 rounded-lg">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center text-xl font-bold text-dark-bg">
-            JC
-          </div>
-          <div class="ml-4">
-            <h4 class="font-semibold">Ing. Jonathan Caira Noa</h4>
-            <p class="text-sm text-gray-400">Líder Técnico · Upgrade Sistemas</p>
-            <p class="text-sm text-gray-400"> +51 997560905</p>
-          </div>
-        </div>
-        <p class="text-gray-400 italic">
-          "Crhistian demuestra compromiso y capacidad para adaptarse rápidamente.
-          Su experiencia en Angular, documentación clara y comunicación efectiva
-          aportan valor real al equipo de desarrollo."
-        </p>
-        <div class="mt-4 text-aurora-green">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="bg-dark-card p-6 rounded-lg">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center text-xl font-bold text-dark-bg">
-            UP
-          </div>
-          <div class="ml-4">
-            <h4 class="font-semibold">Equipo Frontend</h4>
-            <p class="text-sm text-gray-400">Proyecto CRM Empresarial</p>
-          </div>
-        </div>
-        <p class="text-gray-400 italic">
-          "Trabajar con Crhistian es sencillo: comunica bien, pregunta cuando no
-          entiende y se enfoca en resolver problemas reales.
-          Su background en docencia se nota en la forma clara de explicar."
-        </p>
-        <div class="mt-4 text-aurora-blue">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="bg-dark-card p-6 rounded-lg md:col-span-2">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center text-xl font-bold text-dark-bg">
-            BR
-          </div>
-          <div class="ml-4">
-            <h4 class="font-semibold">Grupo Bryce</h4>
-            <p class="text-sm text-gray-400">Institución Educativa</p>
-          </div>
-        </div>
-        <p class="text-gray-400 italic">
-          "Durante más de 5 años, Crhistian destacó como docente por su
-          responsabilidad, liderazgo y capacidad para explicar conceptos complejos
-          de forma sencilla. Hoy esas habilidades se reflejan en su trabajo como
-          desarrollador backend."
-        </p>
-        <div class="mt-4 text-aurora-purple">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i><i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Blog Section -->
-<!-- Blog Section -->
-<section id="blog" class="py-20">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Aprendizajes & Notas Técnicas
-    </h2>
+    <!-- Blog Section -->
+    <section id="blog" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Aprendizajes & Notas Técnicas
+        </h2>
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <!-- Post 1 -->
+          <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+            >
+              <i class="fas fa-brain text-6xl text-dark-bg"></i>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-gray-400 mb-2">
+                Angular · Aprendizaje real
+              </div>
+              <h3 class="text-xl font-semibold mb-3">
+                Copiar código no es aprender: mi lección con Angular
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Reflexión sobre el uso excesivo de IA y autocompletado, y cómo
+                volver a aprender escribiendo código con las manos.
+              </p>
+              <a
+                href="#"
+                class="text-aurora-green hover:text-aurora-blue transition"
+              >
+                Leer artículo →
+              </a>
+            </div>
+          </article>
 
-      <!-- Post 1 -->
-      <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-        <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-          <i class="fas fa-brain text-6xl text-dark-bg"></i>
+          <!-- Post 2 -->
+          <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center"
+            >
+              <i class="fas fa-project-diagram text-6xl text-dark-bg"></i>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-gray-400 mb-2">
+                Arquitectura · Frontend
+              </div>
+              <h3 class="text-xl font-semibold mb-3">
+                El flujo real en Angular: componente → servicio → vista
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Explicación sencilla del flujo de datos en Angular usando una
+                mini tienda como ejemplo práctico.
+              </p>
+              <a
+                href="#"
+                class="text-aurora-green hover:text-aurora-blue transition"
+              >
+                Leer artículo →
+              </a>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
+            <div
+              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
+            >
+              <i class="fas fa-anchor text-6xl text-dark-bg"></i>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-gray-400 mb-2">
+                Carrera · Proactividad
+              </div>
+              <h3 class="text-xl font-semibold mb-3">
+                Proactividad en programación: elegir responder mejor
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Cómo aplicar el hábito de la proactividad cuando fallas en un
+                examen técnico o enfrentas presión laboral.
+              </p>
+              <a
+                href="#"
+                class="text-aurora-green hover:text-aurora-blue transition"
+              >
+                Leer artículo →
+              </a>
+            </div>
+          </article>
         </div>
-        <div class="p-6">
-          <div class="text-sm text-gray-400 mb-2">Angular · Aprendizaje real</div>
-          <h3 class="text-xl font-semibold mb-3">
-            Copiar código no es aprender: mi lección con Angular
-          </h3>
-          <p class="text-gray-400 mb-4">
-            Reflexión sobre el uso excesivo de IA y autocompletado, y cómo
-            volver a aprender escribiendo código con las manos.
-          </p>
-          <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
-            Leer artículo →
-          </a>
-        </div>
-      </article>
-
-      <!-- Post 2 -->
-      <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-        <div class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-          <i class="fas fa-project-diagram text-6xl text-dark-bg"></i>
-        </div>
-        <div class="p-6">
-          <div class="text-sm text-gray-400 mb-2">Arquitectura · Frontend</div>
-          <h3 class="text-xl font-semibold mb-3">
-            El flujo real en Angular: componente → servicio → vista
-          </h3>
-          <p class="text-gray-400 mb-4">
-            Explicación sencilla del flujo de datos en Angular usando
-            una mini tienda como ejemplo práctico.
-          </p>
-          <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
-            Leer artículo →
-          </a>
-        </div>
-      </article>
-
-      <!-- Post 3 -->
-      <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-        <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-          <i class="fas fa-anchor text-6xl text-dark-bg"></i>
-        </div>
-        <div class="p-6">
-          <div class="text-sm text-gray-400 mb-2">Carrera · Proactividad</div>
-          <h3 class="text-xl font-semibold mb-3">
-            Proactividad en programación: elegir responder mejor
-          </h3>
-          <p class="text-gray-400 mb-4">
-            Cómo aplicar el hábito de la proactividad cuando fallas
-            en un examen técnico o enfrentas presión laboral.
-          </p>
-          <a href="#" class="text-aurora-green hover:text-aurora-blue transition">
-            Leer artículo →
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-dark-card/30">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
-      Contacto
-    </h2>
-
-    <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-10">
-
-      <!-- Info -->
-      <div class="space-y-6">
-        <p class="text-gray-400 leading-relaxed">
-          ¿Tienes una oportunidad, proyecto o idea técnica?
-          Estoy abierto a conversar sobre desarrollo backend, cloud y aprendizaje continuo.
-        </p>
-
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-            <i class="fas fa-envelope text-dark-bg"></i>
-          </div>
-          <div>
-            <p class="text-gray-400 text-sm">Email</p>
-            <p class="font-medium">cpacori@unsa.edu.pe</p>
-          </div>
-        </div>
-
-<div class="flex items-center gap-4">
-  <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-    <i class="fab fa-linkedin-in text-dark-bg"></i>
-  </div>
-
-  <div>
-    <p class="text-gray-400 text-sm">LinkedIn</p>
-    <a
-      href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
-      target="_blank"
-      class="font-medium hover:text-aurora-blue transition"
-    >
-      linkedin.com/in/crhistian-ziegler-pacori-paucar
-    </a>
-  </div>
-</div>
-
       </div>
+    </section>
 
-      <!-- CTA simple -->
-      <div class="bg-dark-card border border-dark-border rounded-lg p-6 flex flex-col justify-center text-center">
-        <p class="text-gray-400 mb-4">
-          Prefiero el contacto directo y claro.
-        </p>
-        <a
-          href="mailto:cpacori@unsa.edu.pe"
-          class="inline-block px-6 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-lg text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/40 transition transform hover:scale-105"
-        >
-          Escríbeme un correo
-        </a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+          Contacto
+        </h2>
+
+        <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-10">
+          <!-- Info -->
+          <div class="space-y-6">
+            <p class="text-gray-400 leading-relaxed">
+              ¿Tienes una oportunidad, proyecto o idea técnica? Estoy abierto a
+              conversar sobre desarrollo backend, cloud y aprendizaje continuo.
+            </p>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
+              >
+                <i class="fas fa-envelope text-dark-bg"></i>
+              </div>
+              <div>
+                <p class="text-gray-400 text-sm">Email</p>
+                <p class="font-medium">cpacori@unsa.edu.pe</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center"
+              >
+                <i class="fab fa-linkedin-in text-dark-bg"></i>
+              </div>
+
+              <div>
+                <p class="text-gray-400 text-sm">LinkedIn</p>
+                <a
+                  href="https://www.linkedin.com/in/crhistian-ziegler-pacori-paucar-00a3a11b2/"
+                  target="_blank"
+                  class="font-medium hover:text-aurora-blue transition"
+                >
+                  linkedin.com/in/crhistian-ziegler-pacori-paucar
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA simple -->
+          <div
+            class="bg-dark-card border border-dark-border rounded-lg p-6 flex flex-col justify-center text-center"
+          >
+            <p class="text-gray-400 mb-4">
+              Prefiero el contacto directo y claro.
+            </p>
+            <a
+              href="mailto:cpacori@unsa.edu.pe"
+              class="inline-block px-6 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-lg text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/40 transition transform hover:scale-105"
+            >
+              Escríbeme un correo
+            </a>
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Footer -->
-<!-- Footer -->
-<footer class="py-10 border-t border-dark-border">
-  <div class="container mx-auto px-6 text-center">
+    <!-- Footer -->
+    <footer class="py-10 border-t border-dark-border">
+      <div class="container mx-auto px-6 text-center">
+        <!-- Redes -->
+        <div class="mb-5 flex justify-center gap-6">
+          <a
+            href="https://github.com/Cristian-hash"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl hover:text-aurora-green transition"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
 
-    <!-- Redes -->
-    <div class="mb-5 flex justify-center gap-6">
-      <a 
-        href="https://github.com/Cristian-hash" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="text-2xl hover:text-aurora-green transition"
-        aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl hover:text-aurora-blue transition"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
 
-      <a 
-        href="https://www.linkedin.com/"
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="text-2xl hover:text-aurora-blue transition"
-        aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
+          <a
+            href="mailto:cpacori@unsa.edu.pe"
+            class="text-2xl hover:text-aurora-purple transition"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
 
-      <a 
-        href="mailto:cpacori@unsa.edu.pe"
-        class="text-2xl hover:text-aurora-purple transition"
-        aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-
-    <!-- Texto -->
-    <p class="text-gray-400 text-sm leading-relaxed">
-      © 2025 <strong class="text-white">Crhistian Pacori</strong><br />
-      Ingeniero de Sistemas · Backend & Cloud · Aprendiz constante<br />
-      <span class="italic">“Pon tus decisiones antes que tus emociones”</span> ⚓
-    </p>
-
-  </div>
-</footer>
-
+        <!-- Texto -->
+        <p class="text-gray-400 text-sm leading-relaxed">
+          © 2025 <strong class="text-white">Crhistian Pacori</strong><br />
+          Ingeniero de Sistemas · Backend & Cloud · Aprendiz constante<br />
+          <span class="italic"
+            >“Pon tus decisiones antes que tus emociones”</span
+          >
+          ⚓
+        </p>
+      </div>
+    </footer>
 
     <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("mobileMenu").classList.add("hidden");
         });
+      });
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+      // Add animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-slide-up");
+          }
         });
+      }, observerOptions);
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Observe sections for animation
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
+      });
     </script>
-</body>
+  </body>
 </html>
