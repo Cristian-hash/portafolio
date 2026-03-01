@@ -1,81 +1,128 @@
-⛽ Sistema de Control de Combustibles – MCA Constructores
+# 🧠 Asistente de Ventas Retail
 
-Sistema web desarrollado para la gestión, control y detección de robo de combustible dentro de la empresa MCA Constructores.
-El proyecto fue desarrollado por un equipo liderado por mí, utilizando tecnologías modernas en backend y frontend, y actualmente se encuentra en producción.
+Asistente web diseñado para ayudar a vendedores retail a **recomendar productos complementarios en tiempo real**, aumentando el ticket promedio sin romper el flujo de atención.
 
-🚀 Estado del Proyecto
+Este proyecto se centra en **usabilidad, velocidad y validación con usuarios reales**, no solo en features.
 
-✅ Sistema publicado y en funcionamiento
-🔗 Acceso al sistema:
-https://combustibles-mca.upgrade.com.pe/login
+---
 
-🏗️ Empresa
+## 🎯 Problema que resuelve
 
-MCA Constructores
-📆 Duración del proyecto: Noviembre 2025 – Diciembre 2025
-👨‍💻 Rol: Líder de equipo
-🛠️ Tecnologías: .NET (Backend) – Angular (Frontend)
+En tiendas retail:
 
-🎯 Objetivo del Proyecto
+- Los vendedores olvidan ofrecer accesorios
+- No siempre saben qué recomendar
+- En hora punta no hay tiempo para pensar
 
-Crear un sistema que permita:
+Resultado:
+❌ Ventas incompletas  
+❌ Menor ticket promedio  
+❌ Clientes que regresan por lo que faltó
 
-Controlar el consumo de combustible por unidad.
+---
 
-Detectar posibles irregularidades o robos.
+## 💡 Solución
 
-Centralizar la información en una plataforma web segura.
+El Asistente de Ventas actúa como un **copiloto**:
 
-Mejorar la toma de decisiones mediante reportes claros.
+1. El vendedor selecciona el producto principal
+2. El sistema analiza el contexto
+3. Sugiere **1–2 productos complementarios** con frases de venta claras
 
-🧠 Funcionalidades Principales
+Todo en pocos segundos.
 
-✅ Inicio de sesión de usuarios.
+---
 
-✅ Registro y control de consumo de combustible.
+## 🛠️ Funcionalidades principales
 
-✅ Gestión de datos por unidades y responsables.
+- Recomendaciones automáticas por producto
+- Enfoque en accesorios necesarios (uso inmediato)
+- Frases de venta orientadas a beneficio
+- Flujo rápido pensado para hora punta
+- Diseño simple e intuitivo
 
-✅ Visualización de reportes.
+---
 
-✅ Sistema en entorno real de producción.
+## ⚡ Enfoque en rendimiento
 
-🎨 Mockups (Diseño del Sistema)
+- Objetivo: respuestas < 3 segundos
+- Cacheo de recomendaciones frecuentes
+- Eliminación de procesos que no aportan valor inmediato
+- Prioridad en experiencia del vendedor
 
-Los diseños iniciales del sistema pueden verse aquí:
-🔗 https://gemini.google.com/share/be92c844912b
+---
 
-🧩 Repositorio del Proyecto
+## 🧪 Validación con usuarios reales
 
-Código fuente disponible en GitHub:
-🔗 https://github.com/Cristian-hash/2-upgrade-mockups-combustible-15-11-2025
+El proyecto fue:
 
-🏆 Aportes Personales
+- Deployado
+- Probado con vendedores reales
+- Ajustado según feedback directo
 
-✔️ Lideré el equipo de desarrollo.
+La validación se realiza mediante:
 
-✔️ Coordiné diseño, frontend y backend.
+- Ticket promedio
+- Cantidad de accesorios vendidos
+- Tiempo de atención
 
-✔️ Validé flujos del sistema con base en necesidades reales.
+(Se utiliza una hoja de registro simple para el experimento inicial).
 
-✔️ Apoyé en la toma de decisiones técnicas.
+---
 
-✔️ Supervisé el despliegue a producción.
+## 🧭 Metodología de trabajo
 
-🛡️ Tecnologías Utilizadas
+Este proyecto sigue un enfoque iterativo:
 
-Frontend: Angular
+1. Mostrar algo funcional
+2. Recoger feedback real
+3. Eliminar fricción
+4. Medir impacto
+5. Decidir siguiente paso
 
-Backend: .NET
+> _Si no lo usa alguien real, no es progreso._
 
-Base de datos: (puedes agregar aquí si usaron SQL Server, MySQL, etc.)
+---
 
-Servidor: Entorno web en producción
+## 🚫 Qué NO busca este proyecto (por ahora)
 
-📌 Notas Finales
+- No es un sistema corporativo B2B
+- No prioriza dashboards complejos
+- No agrega IA sin impacto medible
+- No optimiza arquitectura antes de validar negocio
 
-Este proyecto representa una experiencia real de desarrollo de software en entorno productivo, combinando liderazgo, programación, diseño y despliegue.
+---
 
-📬 Contacto
+## 🧱 Estado del proyecto
 
-Si deseas más información sobre este proyecto, puedes contactarme a través de mi portafolio o GitHub.
+🟡 En validación
+
+- Funcional en entorno web
+- Ajustes continuos en velocidad e interactividad
+- Recolección de métricas reales de venta
+
+---
+
+## 🚀 Próximos pasos
+
+- Mejorar interactividad (feedback visual y guía)
+- Afinar tiempos de búsqueda
+- Simplificar aún más el flujo
+- Escalar pruebas con más vendedores
+
+---
+
+## 📌 Filosofía del proyecto
+
+> Primero rápido  
+> Luego claro  
+> Después amigable  
+> Recién bonito
+
+---
+
+## 🤝 Autor
+
+Crhistian  
+Ingeniero de Sistemas – Backend & Cloud  
+Proyecto enfocado en retail y validación real de producto
