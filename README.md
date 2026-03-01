@@ -1,128 +1,36 @@
-# 🧠 Asistente de Ventas Retail
+# 🌌 Portafolio Personal - Crhistian Z. Pacori
 
-Asistente web diseñado para ayudar a vendedores retail a **recomendar productos complementarios en tiempo real**, aumentando el ticket promedio sin romper el flujo de atención.
+¡Hola! Bienvenido al código fuente de mi portafolio personal. Este es un espacio diseñado para mostrar mi experiencia, mis proyectos y mis habilidades como Ingeniero de Sistemas y Desarrollador Full-Stack.
 
-Este proyecto se centra en **usabilidad, velocidad y validación con usuarios reales**, no solo en features.
+## 🛠️ Tecnologías Utilizadas
 
----
+Este proyecto fue construido aplicando el principio de "Divide y vencerás", utilizando herramientas modernas y ligeras:
 
-## 🎯 Problema que resuelve
+- **HTML5:** Para la estructura de las secciones.
+- **Tailwind CSS:** Para los estilos, colores oscuros y el tema inspirado en la "Aurora Boreal".
+- **JavaScript (Vanilla):** Para la interactividad, como el menú móvil, las animaciones al hacer scroll y mostrar más proyectos.
+- **Font Awesome:** Para los íconos de la página.
 
-En tiendas retail:
+## 🚀 Cómo hacer funcionar este proyecto
 
-- Los vendedores olvidan ofrecer accesorios
-- No siempre saben qué recomendar
-- En hora punta no hay tiempo para pensar
+Es muy sencillo, no necesitas instalar servidores complejos:
 
-Resultado:
-❌ Ventas incompletas  
-❌ Menor ticket promedio  
-❌ Clientes que regresan por lo que faltó
+1.  Descarga o clona este repositorio en tu computadora.
+2.  Abre la carpeta del proyecto.
+3.  Haz doble clic en el archivo `index.html` para abrirlo en tu navegador web favorito (Chrome, Edge, Firefox, etc.).
 
----
+## 📂 Estructura del Portafolio
 
-## 💡 Solución
+El portafolio está dividido en secciones clave para facilitar la lectura:
 
-El Asistente de Ventas actúa como un **copiloto**:
-
-1. El vendedor selecciona el producto principal
-2. El sistema analiza el contexto
-3. Sugiere **1–2 productos complementarios** con frases de venta claras
-
-Todo en pocos segundos.
-
----
-
-## 🛠️ Funcionalidades principales
-
-- Recomendaciones automáticas por producto
-- Enfoque en accesorios necesarios (uso inmediato)
-- Frases de venta orientadas a beneficio
-- Flujo rápido pensado para hora punta
-- Diseño simple e intuitivo
+- **Inicio:** Una presentación rápida de quién soy.
+- **Acerca de mí:** Mi formación en la UNSA y TECSUP.
+- **Experiencia Laboral:** Mi recorrido profesional (MCA Constructores, Upgrade, Freelance, etc.).
+- **Habilidades:** Las herramientas y lenguajes que domino (Angular, .NET, PostgreSQL, etc.).
+- **Portafolio:** Los sistemas y aplicaciones que he construido.
+- **Investigación:** Mis artículos académicos publicados.
+- **Contacto:** Cómo comunicarte conmigo.
 
 ---
 
-## ⚡ Enfoque en rendimiento
-
-- Objetivo: respuestas < 3 segundos
-- Cacheo de recomendaciones frecuentes
-- Eliminación de procesos que no aportan valor inmediato
-- Prioridad en experiencia del vendedor
-
----
-
-## 🧪 Validación con usuarios reales
-
-El proyecto fue:
-
-- Deployado
-- Probado con vendedores reales
-- Ajustado según feedback directo
-
-La validación se realiza mediante:
-
-- Ticket promedio
-- Cantidad de accesorios vendidos
-- Tiempo de atención
-
-(Se utiliza una hoja de registro simple para el experimento inicial).
-
----
-
-## 🧭 Metodología de trabajo
-
-Este proyecto sigue un enfoque iterativo:
-
-1. Mostrar algo funcional
-2. Recoger feedback real
-3. Eliminar fricción
-4. Medir impacto
-5. Decidir siguiente paso
-
-> _Si no lo usa alguien real, no es progreso._
-
----
-
-## 🚫 Qué NO busca este proyecto (por ahora)
-
-- No es un sistema corporativo B2B
-- No prioriza dashboards complejos
-- No agrega IA sin impacto medible
-- No optimiza arquitectura antes de validar negocio
-
----
-
-## 🧱 Estado del proyecto
-
-🟡 En validación
-
-- Funcional en entorno web
-- Ajustes continuos en velocidad e interactividad
-- Recolección de métricas reales de venta
-
----
-
-## 🚀 Próximos pasos
-
-- Mejorar interactividad (feedback visual y guía)
-- Afinar tiempos de búsqueda
-- Simplificar aún más el flujo
-- Escalar pruebas con más vendedores
-
----
-
-## 📌 Filosofía del proyecto
-
-> Primero rápido  
-> Luego claro  
-> Después amigable  
-> Recién bonito
-
----
-
-## 🤝 Autor
-
-Crhistian  
-Ingeniero de Sistemas – Backend & Cloud  
-Proyecto enfocado en retail y validación real de producto
+_“Pon tus decisiones antes que tus emociones”_ ⚓
