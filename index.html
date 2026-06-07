@@ -999,6 +999,126 @@
           Portafolio
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <!-- Tesis (DESTACADO) - movida al inicio -->
+          <div
+            id="thesis"
+            class="bg-dark-card p-6 rounded-2xl overflow-hidden card-hover group border-2 border-aurora-green/40 shadow-[0_20px_60px_rgba(0,255,170,0.06)] md:col-span-3"
+          >
+            <div class="absolute -top-3 left-4">
+              <span
+                class="inline-flex items-center px-3 py-1 rounded-full bg-aurora-green text-dark-bg font-bold text-xs"
+                >DESTACADO</span
+              >
+            </div>
+
+            <div
+              class="h-56 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center rounded-md mb-4"
+            >
+              <i class="fas fa-graduation-cap text-7xl text-dark-bg"></i>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-2">
+              Tesis: Motor de Decisiones — Juego Serio para Patrones de Diseño
+            </h3>
+
+            <p class="text-gray-300 mb-4">
+              “Mi tesis construye una plataforma que enseña fundamentos y
+              patrones de diseño para ayudar al estudiante a elegir
+              correctamente en situaciones reales.”
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                >SOLID</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                >Observer</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                >Factory</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
+                >Strategy</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
+                >Gamificación</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-blue/20 text-aurora-blue rounded text-xs"
+                >Java 21</span
+              >
+              <span
+                class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
+                >Spring Boot</span
+              >
+            </div>
+
+            <div class="text-gray-400 mb-4 text-sm space-y-2">
+              <p>
+                <strong>Problema central:</strong> Los estudiantes conocen los
+                patrones teóricamente, pero no identifican cuándo y por qué
+                aplicarlos en problemas reales.
+              </p>
+              <p>
+                <strong>Visión:</strong> Plataforma con ejercicios guiados que
+                forma criterio para elegir patrones, independiente del lenguaje
+                o framework.
+              </p>
+              <p>
+                <strong>Usuario objetivo:</strong> Estudiantes que necesitan
+                aplicar patrones correctamente en entornos reales.
+              </p>
+            </div>
+
+            <div
+              class="bg-dark-bg/40 p-3 rounded-lg border border-dark-border mb-4 text-sm"
+            >
+              <p class="font-semibold mb-2">Arquitectura & Stack</p>
+              <ul class="list-disc ml-5 text-gray-400">
+                <li>Java 21 · Spring Boot 3.x · PostgreSQL 16</li>
+                <li>Patrones: Factory, Strategy, Observer</li>
+                <li>
+                  Arquitectura: Capas (Controller → Service → Repository) ·
+                  Principios SOLID
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://www.notion.so/S2-Lista-de-Actividades-Completa-1caa978ac38781ffb808fcf3c36b301f"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-gradient-to-r from-aurora-green to-aurora-blue rounded text-dark-bg font-semibold hover:shadow-lg transition flex items-center gap-2"
+              >
+                <i class="fas fa-play"></i> En curso (Notion)
+              </a>
+
+              <a
+                href="https://github.com/Cristian-hash/motor-decisiones-api"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 border border-aurora-green rounded text-aurora-green hover:bg-aurora-green hover:text-dark-bg transition flex items-center gap-2"
+              >
+                <i class="fab fa-github"></i> Repositorio (GitHub)
+              </a>
+
+              <a
+                href="https://github.com/Cristian-hash/motor-decisiones-api/blob/main/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-2 border border-aurora-blue rounded text-aurora-blue hover:bg-aurora-blue hover:text-dark-bg transition flex items-center gap-2"
+              >
+                <i class="fas fa-file-alt"></i> Docs / README
+              </a>
+            </div>
+          </div>
+
           <div class="bg-dark-card rounded-lg overflow-hidden card-hover group">
             <div
               class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center"
@@ -1368,141 +1488,7 @@
             </div>
           </div>
 
-          <div
-            class="bg-dark-card rounded-lg overflow-hidden card-hover group hidden more-projects"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
-            >
-              <i class="fas fa-graduation-cap text-6xl text-dark-bg"></i>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <h3 class="text-xl font-semibold mb-2">Educasa</h3>
-                <span
-                  class="bg-green-500/20 text-green-400 text-[10px] px-2 py-1 rounded-full border border-green-500/30 flex items-center gap-1"
-                >
-                  <i class="fas fa-check-circle"></i> Dev Verificado
-                </span>
-              </div>
-              <p class="text-gray-400 mb-4 text-sm">
-                Plataforma móvil y web que conecta estudiantes con profesores.
-                <br /><br />
-                <span
-                  class="text-white font-medium border-l-2 border-aurora-purple pl-2 block"
-                >
-                  Participación oficial: Mi nombre figura en los créditos del
-                  sitio web.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
-                  >Android Studio</span
-                >
-                <span
-                  class="px-2 py-1 bg-aurora-pink/20 text-aurora-pink rounded text-xs"
-                  >Web Landing</span
-                >
-              </div>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.tdlzgroup.educasa"
-                  class="text-aurora-purple hover:text-aurora-pink transition flex items-center gap-2"
-                  target="_blank"
-                >
-                  <i class="fab fa-google-play"></i> Ver en Play Store
-                </a>
-                <a
-                  href="https://www.educasa.org.pe/"
-                  class="text-gray-400 hover:text-white transition flex items-center gap-2 text-sm"
-                  target="_blank"
-                >
-                  <i class="fas fa-globe"></i> Web Oficial (Ver Créditos)
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-dark-card rounded-lg overflow-hidden card-hover group hidden more-projects"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
-            >
-              <i class="fas fa-laptop-code text-6xl text-dark-bg"></i>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Mi Portafolio Personal</h3>
-              <p class="text-gray-400 mb-4">
-                Este sitio web. Diseñado desde cero con HTML, CSS y JS vanilla.
-                Responsive y modo oscuro.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
-                  >HTML5</span
-                >
-                <span
-                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
-                  >JavaScript</span
-                >
-              </div>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="https://youtu.be/RtjxZqAMimU"
-                  class="text-aurora-green hover:text-aurora-blue transition"
-                  target="_blank"
-                >
-                  <i class="fab fa-youtube"></i> Tour
-                </a>
-                <a
-                  href="https://github.com/Cristian-hash/portafolio/commits/master/"
-                  class="text-aurora-green hover:text-aurora-blue transition"
-                  target="_blank"
-                >
-                  <i class="fab fa-github"></i> Código
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="bg-dark-card rounded-lg overflow-hidden card-hover group hidden more-projects"
-          >
-            <div
-              class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center"
-            >
-              <i class="fas fa-university text-6xl text-dark-bg"></i>
-            </div>
-
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Tesis: Juego Serio</h3>
-              <p class="text-gray-400 mb-4">
-                Proyecto de investigación. Juego educativo con gamificación para
-                enseñar patrones de diseño.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-2 py-1 bg-aurora-green/20 text-aurora-green rounded text-xs"
-                  >Unity</span
-                >
-                <span
-                  class="px-2 py-1 bg-aurora-purple/20 text-aurora-purple rounded text-xs"
-                  >Gamificación</span
-                >
-              </div>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="https://www.notion.so/S2-Lista-de-Actividades-Completa-1caa978ac38781ffb808fcf3c36b301f"
-                  class="text-aurora-green hover:text-aurora-blue transition"
-                  target="_blank"
-                >
-                  <i class="fas fa-play"></i> En curso
-                </a>
-              </div>
-            </div>
-          </div>
+          <!-- Tesis movida arriba -->
         </div>
 
         <div class="text-center mt-12" id="btn-container">
